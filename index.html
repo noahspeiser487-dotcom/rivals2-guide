@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rivals of Aether 2 - Komplett Guide</title>
+<style>
+:root {
+  --bg: #0d0d0d;
+  --bg2: #151515;
+  --bg3: #1c1c1c;
+  --bg4: #252525;
+  --text: #e0e0e0;
+  --text2: #a0a0a0;
+  --accent: #f5a623;
+  --accent2: #e74c3c;
+  --border: #333;
+  --fire: #f39c12;
+  --water: #3498db;
+  --earth: #27ae60;
+  --air: #1abc9c;
+  --elec: #9b59b6;
+  --dark: #8e44ad;
+  --plant: #2ecc71;
+  --metal: #7f8c8d;
+  --ice: #00bcd4;
+  --poison: #aed581;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+/* Layout */
+.wrapper { display: flex; min-height: 100vh; }
+
+/* Sidebar */
+.sidebar { width: 260px; background: var(--bg2); border-right: 1px solid var(--border); position: fixed; top: 0; left: 0; height: 100vh; overflow-y: auto; z-index: 100; padding: 20px 0; }
+.sidebar h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); padding: 8px 20px; margin-top: 16px; }
+.sidebar h2:first-child { margin-top: 0; }
+.sidebar a { display: block; padding: 5px 20px; color: var(--text2); text-decoration: none; font-size: 13px; transition: all 0.15s; border-left: 2px solid transparent; }
+.sidebar a:hover { color: var(--text); background: var(--bg3); }
+.sidebar a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg3); }
+.sidebar .sub { padding-left: 32px; font-size: 12px; }
+
+/* Main */
+.main { margin-left: 260px; flex: 1; padding: 40px 48px; max-width: 1100px; }
+
+/* Hero */
+.hero { text-align: center; padding: 60px 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+.hero h1 { font-size: 42px; font-weight: 800; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero p { color: var(--text2); font-size: 16px; margin-top: 8px; }
+.hero .badge { display: inline-block; background: var(--bg4); border: 1px solid var(--border); border-radius: 6px; padding: 4px 12px; font-size: 13px; color: var(--text2); margin-top: 12px; }
+
+/* Sections */
+section { margin-bottom: 48px; }
+section h2 { font-size: 28px; font-weight: 700; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 8px; margin-bottom: 24px; }
+section h3 { font-size: 20px; font-weight: 600; color: var(--text); margin-top: 28px; margin-bottom: 12px; }
+section h4 { font-size: 16px; font-weight: 600; color: var(--accent2); margin-top: 20px; margin-bottom: 8px; }
+section p { margin-bottom: 12px; color: var(--text2); }
+section ul { margin: 8px 0 16px 20px; }
+section li { margin-bottom: 4px; color: var(--text2); }
+section li strong { color: var(--text); }
+
+/* Cards */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0; }
+.card { background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: transform 0.15s, box-shadow 0.15s; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+.card-img { width: 100%; height: 180px; object-fit: cover; background: var(--bg4); display: flex; align-items: center; justify-content: center; }
+.card-img img { max-width: 100%; max-height: 160px; }
+.card-body { padding: 16px; }
+.card-body h4 { font-size: 16px; margin: 0 0 4px; color: var(--text); }
+.card-body .archetype { font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+.card-body p { font-size: 13px; color: var(--text2); margin: 0; }
+
+/* Character full */
+.character { background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 24px; }
+.character-header { display: flex; align-items: center; gap: 20px; margin-bottom: 16px; }
+.character-header img { width: 100px; height: auto; border-radius: 6px; background: var(--bg4); }
+.character-header .info { flex: 1; }
+.character-header h3 { margin: 0; font-size: 24px; }
+.character-header .archetype { color: var(--accent); font-size: 14px; }
+.char-stats { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.char-stats span { background: var(--bg4); padding: 2px 10px; border-radius: 4px; font-size: 12px; color: var(--text2); }
+.character .subsection { margin-top: 16px; }
+.character .subsection h5 { color: var(--accent2); font-size: 14px; margin-bottom: 6px; }
+
+/* Technique boxes */
+.tech-box { background: var(--bg4); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin: 12px 0; }
+.tech-box h4 { margin: 0 0 6px; color: var(--accent); }
+.tech-box .input { font-family: monospace; font-size: 13px; color: var(--water); }
+.tech-box p { font-size: 13px; margin: 4px 0 0; }
+
+/* YouTube section */
+.yt-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; margin: 16px 0; }
+.yt-item { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; transition: background 0.15s; }
+.yt-item:hover { background: var(--bg4); }
+.yt-item a { color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 500; display: block; }
+.yt-item a:hover { text-decoration: underline; }
+.yt-item .channel { font-size: 12px; color: var(--text2); margin-top: 2px; }
+.yt-cat { margin-bottom: 24px; }
+.yt-cat h4 { color: var(--text); margin-bottom: 12px; border-left: 3px solid var(--accent); padding-left: 10px; }
+
+/* Glossary */
+.glossary-list { columns: 3; column-gap: 20px; }
+.glossary-item { break-inside: avoid; margin-bottom: 4px; font-size: 13px; color: var(--text2); }
+.glossary-item strong { color: var(--text); }
+
+/* Glossary letter headers */
+.glossary-letter { break-inside: avoid; margin-top: 16px; }
+.glossary-letter h4 { color: var(--accent); font-size: 18px; border-bottom: 1px solid var(--border); padding-bottom: 4px; margin-bottom: 8px; }
+
+/* Tags */
+.tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; text-transform: uppercase; margin-right: 4px; }
+.tag-fire { background: rgba(243,156,18,0.15); color: var(--fire); }
+.tag-water { background: rgba(52,152,219,0.15); color: var(--water); }
+.tag-earth { background: rgba(39,174,96,0.15); color: var(--earth); }
+.tag-air { background: rgba(26,188,156,0.15); color: var(--air); }
+.tag-elec { background: rgba(155,89,182,0.15); color: var(--elec); }
+.tag-dark { background: rgba(142,68,173,0.15); color: var(--dark); }
+.tag-plant { background: rgba(46,204,113,0.15); color: var(--plant); }
+.tag-metal { background: rgba(127,140,141,0.15); color: var(--metal); }
+.tag-ice { background: rgba(0,188,212,0.15); color: var(--ice); }
+.tag-poison { background: rgba(174,213,129,0.15); color: var(--poison); }
+
+/* Combo */
+.combo { font-family: monospace; font-size: 13px; background: var(--bg4); padding: 6px 10px; border-radius: 4px; display: inline-block; margin: 2px 0; color: var(--accent); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .main { margin-left: 0; padding: 20px; }
+  .glossary-list { columns: 2; }
+  .card-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .glossary-list { columns: 1; }
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<!-- Sidebar -->
+<nav class="sidebar" id="sidebar">
+  <h2>RoA2 Guide</h2>
+  <a href="#intro">Einführung</a>
+  <a href="#mechanics">System-Mechaniken</a>
+  <a href="#techs" class="sub">Universal-Techniken</a>
+  <h2>Charaktere</h2>
+  <a href="#zetterburn">Zetterburn</a>
+  <a href="#forsburn">Forsburn</a>
+  <a href="#loxodont">Loxodont</a>
+  <a href="#clairen">Clairen</a>
+  <a href="#wrastor">Wrastor</a>
+  <a href="#fleet">Fleet</a>
+  <a href="#absa">Absa</a>
+  <a href="#lareina">La Reina</a>
+  <a href="#galvan">Galvan</a>
+  <a href="#olympia">Olympia</a>
+  <a href="#maypul">Maypul</a>
+  <a href="#kragg">Kragg</a>
+  <a href="#ranno">Ranno</a>
+  <a href="#orcane">Orcane</a>
+  <a href="#etalus">Etalus</a>
+  <a href="#slade">Slade</a>
+  <h2>Medien</h2>
+  <a href="#youtube">YouTube-Guides</a>
+  <a href="#glossary">Glossar</a>
+</nav>
+
+<!-- Main -->
+<div class="main">
+
+<!-- Hero -->
+<div class="hero">
+  <h1>RIVALS OF AETHER 2</h1>
+  <p>Kompletter Spieler-Guide &bull; Stand: Patch 1.6.1 (Mai 2026)</p>
+  <span class="badge">Quellen: Dragdown.wiki &bull; YouTube &bull; Aether Studios</span>
+</div>
+
+<!-- ============================================================ -->
+<section id="intro">
+<h2>1. Einführung</h2>
+<p>Rivals of Aether 2 ist ein Platform-Fighter von Aether Studios, erschienen am <strong>23. Oktober 2024</strong> fuer PC (Steam). Das Spiel verwendet ein Prozent-System – je hoeher der Schaden, desto weiter fliegt der Gegner. Ziel ist es, den Gegner aus der Blastzone zu befördern.</p>
+<p>Anders als in Super Smash Bros. gibt es keine traditionellen Shields, sondern eine <strong>Parier-Mechanik (Parry)</strong>. Das Spiel legt Wert auf aggressives, combo-lastiges Gameplay mit einer Vielzahl an universellen Techniken.</p>
+
+<h3>Aktueller Roster (16 Charaktere)</h3>
+<div class="card-grid">
+  <div class="card">
+    <div class="card-img"><img src="https://static.wikitide.net/dragdownwiki/thumb/d/da/RoA2_Zetterburn_css.png/320px-RoA2_Zetterburn_css.png" alt="Zetterburn"></div>
+    <div class="card-body">
+      <h4>Zetterburn</h4>
+      <div class="archetype"><span class="tag tag-fire">Feuer</span> Mittelgewicht / Rushdown</div>
+      <p>Space Animal mit Shine-Pressure und Burn-Mechanik.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img"><img src="https://static.wikitide.net/dragdownwiki/thumb/8/83/RoA2_Forsburn_css.png/320px-RoA2_Forsburn_css.png" alt="Forsburn"></div>
+    <div class="card-body">
+      <h4>Forsburn</h4>
+      <div class="archetype"><span class="tag tag-fire">Feuer</span> Mittelgewicht / Täuscher</div>
+      <p>Rauch- und Klon-basierter Trickser.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img"><img src="https://static.wikitide.net/dragdownwiki/thumb/7/79/RoA2_Loxodont_css.png/320px-RoA2_Loxodont_css.png" alt="Loxodont"></div>
+    <div class="card-body">
+      <h4>Loxodont</h4>
+      <div class="archetype"><span class="tag tag-earth">Erde</span> Schwergewicht / Zoner</div>
+      <p>Lava-Pools und riesige Axt-Hitboxen.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img"><img src="https://static.wikitide.net/dragdownwiki/thumb/0/01/RoA2_Clairen_css.png/320px-RoA2_Clairen_css.png" alt="Clairen"></div>
+    <div class="card-body">
+      <h4>Clairen</h4>
+      <div class="archetype"><span class="tag tag-elec">Elektro</span> Mittelgewicht / Schwert</div>
+      <p>Disjointed Moveset mit Tipper-Stun.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img"><img src="https://static.wikitide.net/dragdownwiki/thumb/9/91/RoA2_Wrastor_css.png/320px-RoA2_Wrastor_css.png" alt="Wrastor"></div>
+    <div class="card-body">
+      <h4>Wrastor</h4>
+      <div class="archetype"><span class="tag tag-air">Luft</span> Leichtgewicht / Aerial</div>
+      <p>Drei Sprünge, Luft-Strongs, Wind-Speed.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img"><img src="https://static.wikitide.net/dragdownwiki/thumb/f/f8/RoA2_Fleet_css.png/320px-RoA2_Fleet_css.png" alt="Fleet"></div>
+    <div class="card-body">
+      <h4>Fleet</h4>
+      <div class="archetype"><span class="tag tag-air">Luft</span> Leichtgewicht / Midrange</div>
+      <p>Bogen, Pfeile und Schwebe-Mechanik.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img"><img src="https://static.wikitide.net/dragdownwiki/thumb/2/22/RoA2_Absa_css.png/320px-RoA2_Absa_css.png" alt="Absa"></div>
+    <div class="card-body">
+      <h4>Absa</h4>
+      <div class="archetype"><span class="tag tag-elec">Elektro</span> Leichtgewicht / Zoner</div>
+      <p>Wolken-Setplay und Lightning-Kicks.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img"><img src="https://static.wikitide.net/dragdownwiki/thumb/5/53/RoA2_La_Reina_css.png/320px-RoA2_La_Reina_css.png" alt="La Reina"></div>
+    <div class="card-body">
+      <h4>La Reina</h4>
+      <div class="archetype"><span class="tag tag-dark">Dunkel</span> Schwergewicht / Grappler</div>
+      <p>Command Grabs und Chair-Setplay.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img"><img src="https://static.wikitide.net/dragdownwiki/thumb/e/ee/RoA2_Galvan_css.png/320px-RoA2_Galvan_css.png" alt="Galvan"></div>
+    <div class="card-body">
+      <h4>Galvan</h4>
+      <div class="archetype"><span class="tag tag-metal">Metall</span> Schwergewicht / Setplay</div>
+      <p>Drills, UFO und Galvanization.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img"><img src="https://static.wikitide.net/dragdownwiki/thumb/7/7c/RoA2_Olympia_css.png/320px-RoA2_Olympia_css.png" alt="Olympia"></div>
+    <div class="card-body">
+      <h4>Olympia</h4>
+      <div class="archetype"><span class="tag tag-earth">Erde</span> Leichtgewicht / Rushdown</div>
+      <p>Schnellste Frame Data, Gem-Setups.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img"><img src="https://static.wikitide.net/dragdownwiki/thumb/3/3b/RoA2_Maypul_css.png/320px-RoA2_Maypul_css.png" alt="Maypul"></div>
+    <div class="card-body">
+      <h4>Maypul</h4>
+      <div class="archetype"><span class="tag tag-plant">Pflanze</span> Leichtgewicht / Speedster</div>
+      <p>Schnellster Charakter, Wrap-Kombos.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img"><img src="https://static.wikitide.net/dragdownwiki/thumb/f/fe/RoA2_Kragg_css.png/320px-RoA2_Kragg_css.png" alt="Kragg"></div>
+    <div class="card-body">
+      <h4>Kragg</h4>
+      <div class="archetype"><span class="tag tag-earth">Erde</span> Schwergewicht / Juggernaut</div>
+      <p>Rock-Projektil und Pillar-Plattform.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img"><img src="https://static.wikitide.net/dragdownwiki/thumb/4/4b/RoA2_Ranno_css.png/320px-RoA2_Ranno_css.png" alt="Ranno"></div>
+    <div class="card-body">
+      <h4>Ranno</h4>
+      <div class="archetype"><span class="tag tag-poison">Gift</span> Mittelgewicht / Rushdown</div>
+      <p>Needleboosting, Poison-DoT.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img"><img src="https://static.wikitide.net/dragdownwiki/thumb/4/4c/RoA2_Orcane_css.png/320px-RoA2_Orcane_css.png" alt="Orcane"></div>
+    <div class="card-body">
+      <h4>Orcane</h4>
+      <div class="archetype"><span class="tag tag-water">Wasser</span> Mittelgewicht / Trickster</div>
+      <p>Puddle-Teleport, Hydroplane, Bubbles.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img"><img src="https://static.wikitide.net/dragdownwiki/thumb/d/d6/RoA2_Etalus_css.png/320px-RoA2_Etalus_css.png" alt="Etalus"></div>
+    <div class="card-body">
+      <h4>Etalus</h4>
+      <div class="archetype"><span class="tag tag-ice">Eis</span> Schwergewicht / Zone</div>
+      <p>Eis-Traktion und horizontale Combos.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img"><img src="https://static.wikitide.net/dragdownwiki/thumb/c/c7/RoA2_Slade_css.png/320px-RoA2_Slade_css.png" alt="Slade"></div>
+    <div class="card-body">
+      <h4>Slade</h4>
+      <div class="archetype"><span class="tag tag-water">Wasser</span> Mittelgewicht / Economy</div>
+      <p>Item-System mit Coins und Chest.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<section id="mechanics">
+<h2>2. System-Mechaniken</h2>
+
+<h3>2.1 Bodengebundene Bewegung</h3>
+<div class="tech-box">
+  <h4>Wavedashing</h4>
+  <div class="input">Input: Luft-Ausweichen diagonal nach unten in den Boden</div>
+  <p>Horizontaler Slide, sofort actionable nach Landung. Kern-Tool fuer neutrale Positionierung und Pressure.</p>
+</div>
+<div class="tech-box">
+  <h4>Dash Dance</h4>
+  <div class="input">Input: Waehrend Dash die andere Richtung antippen</div>
+  <p>Hin-und-Her-Bewegung im initialen Dash-Fenster. Macht Bewegung unvorhersehbar, exzellent zum Wiff-Punish.</p>
+</div>
+<div class="tech-box">
+  <h4>Edge Cancel</h4>
+  <div class="input">Input: Landung an Plattformkante waehrend einer Aktion</div>
+  <p>Die Aktion wird sofort gecancelt, kein Landing Lag. Extrem nuetzlich fuer Combos und Pressure.</p>
+</div>
+<div class="tech-box">
+  <h4>Waveland</h4>
+  <div class="input">Input: Luft-Ausweichen diagonal nach unten auf Plattform</div>
+  <p>Wie Wavedash, aber auf Plattform. Erlaubt sofortige Aktionen nach Plattform-Landung.</p>
+</div>
+
+<h3>2.2 Aeriale Bewegung</h3>
+<p>Charaktere koennen in der Luft driftn, schnellfallen (Fastfall), einen Doppelsprung ausführen und Wandspringen (Wall Jump). Jeder Charakter hat mindestens einen Doppelsprung.</p>
+<ul>
+  <li><strong>Fastfall:</strong> Stick kurz nach unten waehrend Fall = sofort Fastfall-Speed. Kleiner Funke als visuelles Signal.</li>
+  <li><strong>Wall Jump:</strong> Einmal pro Airtime, 5 Frames Wall-Jumpsquat. Manche Chars haben Wall Cling (bis zu 60 Frames).</li>
+  <li><strong>No Impact Land (NIL):</strong> Landung mit minimaler vertikaler Geschw., sofortige Aktion ohne Verzögerung.</li>
+  <li><strong>Special Fall:</strong> Nach manchen Specials kurz inactionable, nur Drift und Fastfall moeglich.</li>
+</ul>
+
+<h3>2.3 Angriffe</h3>
+<p>Jeder Charakter hat: <strong>Jab</strong> (Neutral-A), <strong>Dash Attack</strong>, <strong>Tilts</strong> (Side/Up/Down), <strong>Strongs/Smashes</strong> (aufladbar), <strong>Aerials</strong> (N/F/B/U/D-Air), <strong>Specials</strong> (N/F/U/D) und <strong>Grab/Throw</strong>.</p>
+<div class="tech-box">
+  <h4>Hitfall</h4>
+  <div class="input">Input: Aerial trifft > waehrend Hitpause nach unten tippen</div>
+  <p>Kern-Tool fuer Kombos. Man faellt sofort nach Treffer, ist frueher actionable und kann weitermachen.</p>
+</div>
+<div class="tech-box">
+  <h4>Gatling Combo</h4>
+  <div class="input">Input: Dash Attack > Up Strong (bei manchen Chars)</div>
+  <p>Zetterburn etc. koennen Dash Attack direkt in Up Strong canceln.</p>
+</div>
+
+<h3>2.4 Verteidigung</h3>
+<ul>
+  <li><strong>Parry:</strong> Shield im ersten Frame eines Angriffs = pariert. Stunnt Gegner, refreshed Shield. Pariert auch Projektile (Reflect).</li>
+  <li><strong>DI (Directional Influence):</strong> Stick-Richtung waehrend Hitpause beeinflusst Flugrichtung. Nur Kardinalrichtungen und Diagonalen.</li>
+  <li><strong>SDI/ASDI:</strong> Bewegung waehrend Hitpause (Smash DI) oder automatisch nach Hitpause (ASDI).</li>
+  <li><strong>Crouch Cancel (CC):</strong> Knockback-Reduktion wenn im Crouch getroffen.</li>
+  <li><strong>Floorhugging:</strong> Im Crouch getroffen werden fuer minimierten Hitstun.</li>
+</ul>
+
+<h3>2.5 Knockdown & Tech</h3>
+<p>Bei Bodenkontakt kann man <strong>Tech-en</strong> (Shield vor Aufprall): Tech in Place, Tech Roll, Tech Stand. Bei Missed Tech: Getup Attack, Getup Roll, Normal Getup oder Getup Special.</p>
+
+<h3>2.6 Ledge (Kante)</h3>
+<p>Ledge-Optionen mit Frame-Daten:</p>
+<ul>
+  <li><strong>Ledge Stand:</strong> 30 Frames intangible, 5 vuln. = 35 total</li>
+  <li><strong>Ledge Roll:</strong> 30 intangible, 18 vuln. = 48 total</li>
+  <li><strong>Ledge Jump:</strong> 14 intangible, dann airborne</li>
+  <li><strong>Ledge Drop:</strong> Intangibility bleibt, 1 Frame</li>
+  <li><strong>Ledge Attack:</strong> 55 total (Maypul 60)</li>
+  <li><strong>Ledge Special:</strong> Charakterabhaengig</li>
+</ul>
+
+<h3>2.7 Knockback & Hitstun</h3>
+<p><strong>Knockback-Formel:</strong> KB = (BaseKB + Scaling x (Damage + 10)) x WeightMulti x CCMult. Tumble Threshold: 26 cm/f.</p>
+<p><strong>Hitpause:</strong> floor(2.5 + Damage x 0.3), capped 3-24 Frames.</p>
+<p><strong>Armor-Typen:</strong> Knockback Armor, Weak Armor, Super Armor (Etalus, Olympia).</p>
+</section>
+
+<!-- ============================================================ -->
+<section id="techs">
+<h2>3. Universal-Techniken</h2>
+
+<h3>3.1 Bewegungstechniken</h3>
+<div class="tech-box"><h4>Wavedash</h4><div class="input">Luft-Ausweichen diagonal abwaerts in Boden</div><p>Horizontaler Slide, sofort actionable.</p></div>
+<div class="tech-box"><h4>Waveland</h4><div class="input">Luft-Ausweichen diagonal abwaerts auf Plattform</div><p>Wie Wavedash auf Plattform.</p></div>
+<div class="tech-box"><h4>Dash Dance</h4><div class="input">Dash > andere Richtung im Dash-Fenster</div><p>Hin-und-Her, Wiff-Punish.</p></div>
+<div class="tech-box"><h4>RAR</h4><div class="input">Run > rueckwaerts > Jump > Aerial</div><p>Rueckwaerts-Aerial aus Vorwaertsbewegung.</p></div>
+<div class="tech-box"><h4>Edge Cancel</h4><div class="input">Landung an Plattformkante bei Aktion</div><p>Kein Landing Lag.</p></div>
+<div class="tech-box"><h4>Haxdash</h4><div class="input">Ledge Drop > Jump > Airdodge zur Ledge</div><p>Refresh Ledge Intangibility.</p></div>
+<div class="tech-box"><h4>Ledgehop</h4><div class="input">Ledge Drop > DJ > Aerial</div><p>Intangibler Aerial von Kante.</p></div>
+<div class="tech-box"><h4>Ledgedash</h4><div class="input">Ledge Drop > DJ > Waveland</div><p>Auf Buehne mit Intangibility.</p></div>
+
+<h3>3.2 Offensive Techniken</h3>
+<div class="tech-box"><h4>Hitfall</h4><div class="input">Aerial trifft > Fastfall in Hitpause</div><p>Sofortiger Fastfall, erlaubt Follow-ups.</p></div>
+<div class="tech-box"><h4>DACUS</h4><div class="input">Dash Attack > Startup: Up Strong</div><p>Gleitender Strong.</p></div>
+<div class="tech-box"><h4>Glide Toss</h4><div class="input">Item-Angriff > Shield + Richtung</div><p>Wirft Item + gleitet.</p></div>
+<div class="tech-box"><h4>AGT</h4><div class="input">Luft: Item > Luft-Ausweichen</div><p>Essentiell fuer Recovery mancher Chars.</p></div>
+<div class="tech-box"><h4>B-Reverse</h4><div class="input">Special-Startup > andere Richtung</div><p>Momentum-Umkehr.</p></div>
+
+<h3>3.3 Defensive Techniken</h3>
+<div class="tech-box"><h4>Amsah Tech</h4><div class="input">Shield kurz vor Bodenkontakt</div><p>Tech-en trotz starkem Knockback.</p></div>
+<div class="tech-box"><h4>Wiggle Out</h4><div class="input">Stick in Hitstun bewegen</div><p>Verkuerzt Hitstun.</p></div>
+<div class="tech-box"><h4>Shield DI</h4><div class="input">Stick in Shield-Treffer-Richtung</div><p>Shield bewegt sich.</p></div>
+</section>
+
+<!-- ============================================================ -->
+<section id="characters">
+<h2>4. Charakter-Guides</h2>
+
+<div class="character" id="zetterburn">
+  <div class="character-header">
+    <img src="https://static.wikitide.net/dragdownwiki/thumb/d/da/RoA2_Zetterburn_css.png/320px-RoA2_Zetterburn_css.png" alt="Zetterburn">
+    <div class="info">
+      <h3>Zetterburn <span class="tag tag-fire">Feuer</span></h3>
+      <div class="archetype">Mittelgewicht Fastfaller / Rushdown</div>
+    </div>
+  </div>
+  <p>Rushdown-Charakter der Gegner verbrennt (Burn) und mit verstaerkten Strongs frueh killt. Shine (N-Special, Frame 2, jump-cancellable) ist Kern des Druck-Spiels.</p>
+  <div class="char-stats"><span>Burn: 5 Ticks a 1%</span><span>Shine: Frame 2</span><span>Fastest Strong: U-Strong</span></div>
+  <div class="subsection">
+    <h5>Staerken</h5>
+    <ul><li>Beste Shield Pressure (Shine > Wavedash/Aerial/Grab)</li><li>Fruehe Kills gegen Burn</li><li>Gute Mobility</li></ul>
+  </div>
+  <div class="subsection">
+    <h5>Schwaechen</h5>
+    <ul><li>Schwache Recovery</li><li>Keine Disjoints ausser B-Air</li></ul>
+  </div>
+  <div class="subsection">
+    <h5>Kern-Kombos</h5>
+    <div class="combo">D-Air > Shine > U-Tilt / Aerial</div>
+    <div class="combo">Shine (Undershine) > Waveland > U-Strong</div>
+    <div class="combo">D-Throw > U-Strong (DI in) / F-Strong (DI out)</div>
+    <div class="combo">Dash Attack > U-Strong (Gatling)</div>
+  </div>
+  <div class="subsection">
+    <h5>Tech-Tipps</h5>
+    <ul><li>Undershine (Gegner von unten treffen) gibt beste Combo-Winkel</li><li>Flip Cancel: Aerial D-Special > Shield = Recovery Mixup</li></ul>
+  </div>
+</div>
+
+<div class="character" id="forsburn">
+  <div class="character-header">
+    <img src="https://static.wikitide.net/dragdownwiki/thumb/8/83/RoA2_Forsburn_css.png/320px-RoA2_Forsburn_css.png" alt="Forsburn">
+    <div class="info">
+      <h3>Forsburn <span class="tag tag-fire">Feuer</span></h3>
+      <div class="archetype">Mittelgewicht Semi-Fastfaller / Taeuscher</div>
+    </div>
+  </div>
+  <p>Rauchwolken zur Taeuschung und Klon (aufgeladenes N-Special) fuer Druck. Disjointed Dolch-Normals.</p>
+  <div class="subsection">
+    <h5>Staerken</h5>
+    <ul><li>Rauch = unsichtbar + still</li><li>Grosser Dashdance mit Disjoints</li></ul>
+  </div>
+  <div class="subsection">
+    <h5>Schwaechen</h5>
+    <ul><li>Hoher Short Hop</li><li>Kreatives Neutral notwendig</li></ul>
+  </div>
+  <div class="subsection">
+    <h5>Einzigartige Mechaniken</h5>
+    <ul><li><strong>Smoke:</strong> Normale erzeugen Rauchwolken; unsichtbar + silent</li><li><strong>Clone:</strong> Aufgeladenes N-Special; detoniert bei erneutem N-Special</li></ul>
+  </div>
+</div>
+
+<div class="character" id="loxodont">
+  <div class="character-header">
+    <img src="https://static.wikitide.net/dragdownwiki/thumb/7/79/RoA2_Loxodont_css.png/320px-RoA2_Loxodont_css.png" alt="Loxodont">
+    <div class="info">
+      <h3>Loxodont <span class="tag tag-earth">Erde</span></h3>
+      <div class="archetype">Schwergewicht Floatie / Disjoint-Zoner</div>
+    </div>
+  </div>
+  <p>Lava-Pools geben Molten Charges (max 3) die Strongs verstaerken und Eruption (D-Special) aktivieren. Meatball (N-Special) = winkelbares Projektil.</p>
+  <div class="char-stats"><span>Gewicht: 110</span><span>Fastest Move: Frame 7</span><span>Molten Charges: 3</span></div>
+  <div class="subsection">
+    <h5>Kern-Kombos</h5>
+    <div class="combo">D-Tilt (Shockwave) > Aerial</div>
+    <div class="combo">D-Throw (auf Lava Pool) > Pop-up > Combo</div>
+    <div class="combo">Eruption > Aerial Cancel > B-Air</div>
+  </div>
+</div>
+
+<div class="character" id="clairen">
+  <div class="character-header">
+    <img src="https://static.wikitide.net/dragdownwiki/thumb/0/01/RoA2_Clairen_css.png/320px-RoA2_Clairen_css.png" alt="Clairen">
+    <div class="info">
+      <h3>Clairen <span class="tag tag-elec">Elektro</span></h3>
+      <div class="archetype">Mittelgewicht Semi-Fastfaller / Schwert</div>
+    </div>
+  </div>
+  <p>Vollstaendig disjointed Moveset mit Tipper-Stun (Tipstun). Laengster Dashdance im Spiel, kein Projektil.</p>
+  <div class="subsection">
+    <h5>Staerken</h5>
+    <ul><li>Laengster Dashdance = exzellentes Wiff-Punishing</li><li>Tippers stunnen Gegner (Frame Advantage)</li></ul>
+  </div>
+  <div class="subsection">
+    <h5>Schwaechen</h5>
+    <ul><li>Sour Hits schwach, kein Combo-Potential</li><li>Kein Projektil</li></ul>
+  </div>
+</div>
+
+<div class="character" id="wrastor">
+  <div class="character-header">
+    <img src="https://static.wikitide.net/dragdownwiki/thumb/9/91/RoA2_Wrastor_css.png/320px-RoA2_Wrastor_css.png" alt="Wrastor">
+    <div class="info">
+      <h3>Wrastor <span class="tag tag-air">Luft</span></h3>
+      <div class="archetype">Leichtgewicht Floaty / Aerial-Dominator (Gewicht: 71)</div>
+    </div>
+  </div>
+  <p>Drei Doppelsprünge, Luft-Strongs (Claps), Slipstream-Speedboost. Strongs nur in der Luft nutzbar.</p>
+  <div class="subsection">
+    <h5>Kern-Kombos</h5>
+    <div class="combo">D-Tilt > F-Strong / Aerial</div>
+    <div class="combo">U-Air Loops > Clap Finisher (DI in = U-Clap, DI out = F-Clap)</div>
+    <div class="combo">D-Special > U-Special (Kill Confirm)</div>
+  </div>
+</div>
+
+<div class="character" id="fleet">
+  <div class="character-header">
+    <img src="https://static.wikitide.net/dragdownwiki/thumb/f/f8/RoA2_Fleet_css.png/320px-RoA2_Fleet_css.png" alt="Fleet">
+    <div class="info">
+      <h3>Fleet <span class="tag tag-air">Luft</span></h3>
+      <div class="archetype">Leichtgewicht Floaty / Bogen-Midrange</div>
+    </div>
+  </div>
+  <p>Disjointed Bogen-Attacken und Pfeile. Slow Fall (Schweben) gibt einzigartige aeriale Kontrolle. Wind Chimes = verzoegerte Explosionen.</p>
+  <div class="subsection">
+    <h5>Kern-Kombos</h5>
+    <div class="combo">ISF Hitfall N-Air > N-Air / U-Tilt / Grab</div>
+    <div class="combo">D-Tilt > U-Air (Kill Confirm)</div>
+    <div class="combo">U-Throw > Aerial</div>
+  </div>
+</div>
+
+<div class="character" id="absa">
+  <div class="character-header">
+    <img src="https://static.wikitide.net/dragdownwiki/thumb/2/22/RoA2_Absa_css.png/320px-RoA2_Absa_css.png" alt="Absa">
+    <div class="info">
+      <h3>Absa <span class="tag tag-elec">Elektro</span></h3>
+      <div class="archetype">Leichtgewicht Floaty / Setplay-Zoner</div>
+    </div>
+  </div>
+  <p>Einzigartiger Double Jump (dippt vor Aufstieg) + DJC. Wolken-Setplay, Lightning-Kick Sweetspots.</p>
+  <div class="subsection">
+    <h5>Wichtige Moves</h5>
+    <ul><li><strong>F-Air/B-Air/D-Air:</strong> Winzige aber extrem starke Sweetspots</li><li><strong>U-Air:</strong> Extrem stark, killt frueh oben</li><li><strong>B-Throw:</strong> Kill-Throw</li></ul>
+  </div>
+</div>
+
+<div class="character" id="lareina">
+  <div class="character-header">
+    <img src="https://static.wikitide.net/dragdownwiki/thumb/5/53/RoA2_La_Reina_css.png/320px-RoA2_La_Reina_css.png" alt="La Reina">
+    <div class="info">
+      <h3>La Reina <span class="tag tag-dark">Dunkel</span></h3>
+      <div class="archetype">Schwergewicht Fastfaller / Grappler</div>
+    </div>
+  </div>
+  <p>Residenter Grappler mit Command Grabs (F-Strong, D-Air, F-Special) und Chair-Setplay. Zerstoert Shields und CC.</p>
+</div>
+
+<div class="character" id="galvan">
+  <div class="character-header">
+    <img src="https://static.wikitide.net/dragdownwiki/thumb/e/ee/RoA2_Galvan_css.png/320px-RoA2_Galvan_css.png" alt="Galvan">
+    <div class="info">
+      <h3>Galvan <span class="tag tag-metal">Metall</span></h3>
+      <div class="archetype">Schwergewicht Semi-Fastfaller / Setplay</div>
+    </div>
+  </div>
+  <p>Drills, UFO und Magnet-Projektil. Galvanization (glanzend nach Treffer) verbessert Tools. UFO = steuerbare Plattform.</p>
+</div>
+
+<div class="character" id="olympia">
+  <div class="character-header">
+    <img src="https://static.wikitide.net/dragdownwiki/thumb/7/7c/RoA2_Olympia_css.png/320px-RoA2_Olympia_css.png" alt="Olympia">
+    <div class="info">
+      <h3>Olympia <span class="tag tag-earth">Erde</span></h3>
+      <div class="archetype">Leichtgewicht Fastfaller / Rushdown</div>
+    </div>
+  </div>
+  <p>Schnellste Frame Data im Spiel. Kurzer Short Hop + hohe Fallgeschw. fuer extrem schnelle aeriale Angriffe. Gem-Projektil richtet Combos ein.</p>
+</div>
+
+<div class="character" id="maypul">
+  <div class="character-header">
+    <img src="https://static.wikitide.net/dragdownwiki/thumb/3/3b/RoA2_Maypul_css.png/320px-RoA2_Maypul_css.png" alt="Maypul">
+    <div class="info">
+      <h3>Maypul <span class="tag tag-plant">Pflanze</span></h3>
+      <div class="archetype">Leichtgewicht Fastfaller / Speedster</div>
+    </div>
+  </div>
+  <p>Schnellster Charakter am Boden und in der Luft. Watcher's Mark fuer Wrap-Kombos. Lily/Poppy fuer Extensions.</p>
+</div>
+
+<div class="character" id="kragg">
+  <div class="character-header">
+    <img src="https://static.wikitide.net/dragdownwiki/thumb/f/fe/RoA2_Kragg_css.png/320px-RoA2_Kragg_css.png" alt="Kragg">
+    <div class="info">
+      <h3>Kragg <span class="tag tag-earth">Erde</span></h3>
+      <div class="archetype">Schwergewicht Fastfaller / Juggernaut</div>
+    </div>
+  </div>
+  <p>Rock (bestes Projektil im Spiel) und Pillar (U-Special = Plattform ueberall). Cargo Grab zum Gegner tragen.</p>
+  <div class="subsection">
+    <h5>Kern-Kombos</h5>
+    <div class="combo">D-Throw > U-Strong (Kill Confirm)</div>
+    <div class="combo">N-Air Loops > F-Air</div>
+    <div class="combo">D-Throw Chaingrab (niedrig-mittel%)</div>
+    <div class="combo">Rock Throw > F-Air</div>
+  </div>
+</div>
+
+<div class="character" id="ranno">
+  <div class="character-header">
+    <img src="https://static.wikitide.net/dragdownwiki/thumb/4/4b/RoA2_Ranno_css.png/320px-RoA2_Ranno_css.png" alt="Ranno">
+    <div class="info">
+      <h3>Ranno <span class="tag tag-poison">Gift</span></h3>
+      <div class="archetype">Mittelgewicht Midfaller / Rushdown</div>
+    </div>
+  </div>
+  <p>Ranno verkoerpert "Tod durch tausend Nadelstiche": schnelle Normals und Bodengeschwindigkeit, Poison amplifiziert Schaden.</p>
+  <div class="subsection">
+    <h5>Staerken</h5>
+    <ul><li>Exzellente Shield Pressure mit F-Air</li><li>Needleboosting + Waveland-Mixups</li></ul>
+  </div>
+</div>
+
+<div class="character" id="orcane">
+  <div class="character-header">
+    <img src="https://static.wikitide.net/dragdownwiki/thumb/4/4c/RoA2_Orcane_css.png/320px-RoA2_Orcane_css.png" alt="Orcane">
+    <div class="info">
+      <h3>Orcane <span class="tag tag-water">Wasser</span></h3>
+      <div class="archetype">Mittelgewicht Midfaller / Stage Control</div>
+    </div>
+  </div>
+  <p>Puddle ermoeglicht Teleport, verstaerkte Strongs und Bubbles. Hydroplane gibt Burst-Bewegung.</p>
+  <div class="subsection">
+    <h5>Kern-Kombos</h5>
+    <div class="combo">D-Tilt > N-Air / B-Air / U-Air</div>
+    <div class="combo">U-Throw > Aerial (Bubble Trap)</div>
+    <div class="combo">D-Throw > Tech Chase > D-Strong (Frame 7)</div>
+  </div>
+</div>
+
+<div class="character" id="etalus">
+  <div class="character-header">
+    <img src="https://static.wikitide.net/dragdownwiki/thumb/d/d6/RoA2_Etalus_css.png/320px-RoA2_Etalus_css.png" alt="Etalus">
+    <div class="info">
+      <h3>Etalus <span class="tag tag-ice">Eis</span></h3>
+      <div class="archetype">Schwergewicht Fastfaller / Eis-Zone-Control</div>
+    </div>
+  </div>
+  <p>Eis reduziert Traktion = groessere Wavedashes. Dash Attack (jump-cancellable) wird auf Eis schneller.</p>
+</div>
+
+<div class="character" id="slade">
+  <div class="character-header">
+    <img src="https://static.wikitide.net/dragdownwiki/thumb/c/c7/RoA2_Slade_css.png/320px-RoA2_Slade_css.png" alt="Slade">
+    <div class="info">
+      <h3>Slade <span class="tag tag-water">Wasser</span></h3>
+      <div class="archetype">Mittelgewicht Midfaller / Economy-Item-Play</div>
+    </div>
+  </div>
+  <p>Disjointed Scimitar-Attacken + Economy-System: Coins von Treffern fuer Items (Shuriken, Drop, Boomerang, Bomb) und Upgrades (Earrings, Hook, Boots, Feather).</p>
+  <div class="subsection">
+    <h5>Items</h5>
+    <ul><li><strong>Shuriken (20 Coins):</strong> AGT-Recovery</li><li><strong>Drop (100 Coins):</strong> Flinch + Heilung 1%</li><li><strong>Boomerang (200 Coins):</strong> Kehrt zurueck</li><li><strong>Bomb (300 Coins):</strong> Explosion, Finisher</li></ul>
+  </div>
+  <div class="subsection">
+    <h5>Wichtige Moves</h5>
+    <ul><li><strong>F-Special (Whirlpool Flurry):</strong> Rekka mit 9 Branches, 3B = Parry</li><li><strong>D-Strong:</strong> Frame 7, Tech Chase</li></ul>
+  </div>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<section id="youtube">
+<h2>5. YouTube-Guides</h2>
+
+<div class="yt-cat">
+<h4>Anfaenger-Guides</h4>
+<div class="yt-grid">
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=FE2CAQoDED0" target="_blank">Art of Rivals - Beginner Basics</a><div class="channel">Art of Rivals</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=EPVQ0QCwO3o" target="_blank">Art of Rivals - Neutral & Gameplan</a><div class="channel">Art of Rivals</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=2iyy9g-X20s" target="_blank">Art of Rivals - Advanced Movement</a><div class="channel">Art of Rivals</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=vIOBWkHXOAw" target="_blank">Beginner's Guide To RoA2</a><div class="channel">Wisely</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=q7a1MkWUV_k" target="_blank">Characters Explained for Smash Players</a><div class="channel">BlueBubbee</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=llV8aK9fYA0" target="_blank">How To Beat GOOD Players</a><div class="channel">Doove</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=-mbRxbLEPW8" target="_blank">ALL ADVANCED TECHNIQUES</a><div class="channel">Platform Fighters</div></div>
+</div>
+</div>
+
+<div class="yt-cat">
+<h4>Charakter-Guides</h4>
+<div class="yt-grid">
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=WMzi_wNBUKU" target="_blank">Zetterburn Beginner's Guide (M2K)</a><div class="channel">Mew2king</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=rbuTl2j7nk0" target="_blank">Kragg Beginner's Guide (M2K)</a><div class="channel">Mew2king</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=3_x7WqbWqmE" target="_blank">ULTIMATE GUIDE TO KRAGG</a><div class="channel">ProofBlock</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=SnYqGKJz774" target="_blank">How To Play Wrastor</a><div class="channel">MrRsmash</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=6ARljs0lGTQ" target="_blank">Everything you Need to Play Maypul</a><div class="channel">elpe</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=J1IsQbCcUBs" target="_blank">ULTIMATE Ranno Guide</a><div class="channel">Theovates</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=bvOhsJUR88E" target="_blank">ULTIMATE GUIDE TO RANNO</a><div class="channel">ProofBlock</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=47GEkgYLms0" target="_blank">Clairen Guide</a><div class="channel">michaelthegoat</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=KDh23wiK4Mg" target="_blank">ULTIMATE GUIDE TO CLAIREN</a><div class="channel">ProofBlock</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=5cCHtUP0ck8" target="_blank">How Loxodont Works</a><div class="channel">Wisely</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=i8Y-6_IdfVE" target="_blank">ULTIMATE GUIDE TO LOXODONT</a><div class="channel">ProofBlock</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=SszJSpgk03c" target="_blank">How Fleet Works</a><div class="channel">Wisely</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=Z5scgEuPR_g" target="_blank">Forsburn 101 Tutorial</a><div class="channel">Aether Studios</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=__-LSIyfwWI" target="_blank">Everything Forsburn</a><div class="channel">elpe</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=fvHkLpmvQiA" target="_blank">How to Master Orcane</a><div class="channel">Last Stock</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=GR8l_Fhr0xw" target="_blank">ULTIMATE GUIDE TO ETALUS</a><div class="channel">ProofBlock</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=5_0t06hFKwM" target="_blank">La Reina 101 Tutorial</a><div class="channel">Aether Studios</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=BM5C3GlNMvg" target="_blank">Olympia 101 Tutorial</a><div class="channel">Aether Studios</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=wtX2ymbbRu8" target="_blank">Galvan 101 Tutorial</a><div class="channel">Aether Studios</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=ybfFMVc6i88" target="_blank">Absa 101 Tutorial</a><div class="channel">Aether Studios</div></div>
+</div>
+</div>
+
+<div class="yt-cat">
+<h4>Combos & Combo-Videos</h4>
+<div class="yt-grid">
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=chs7AUwrqgM" target="_blank">Craziest Combos in RoA2</a><div class="channel">YEET Smash</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=bntzD9I29ec" target="_blank">Making Combos HURT</a><div class="channel">Doove</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=Hjtu-ru6K9k" target="_blank">Showoff - Orcane Combo</a><div class="channel">Sabre</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=W9XXIiICk3E" target="_blank">Wrastor Combo Video</a><div class="channel">Moosseff</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=kPOp8g04Ot4" target="_blank">Animal - Etalus Combo</a><div class="channel">Animal</div></div>
+</div>
+</div>
+
+<div class="yt-cat">
+<h4>Movement-Guides</h4>
+<div class="yt-grid">
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=M7nw3xZp77w" target="_blank">Complete Movement Guide</a><div class="channel">BadmouthBlooper</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=aSTp_GcdEAk" target="_blank">Control Stick Movement Guide</a><div class="channel">Sillintor</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=G8ONkSyF1mA" target="_blank">Moving with Purpose</a><div class="channel">Doove</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=lTlKI0DS1c8" target="_blank">HOW TO OPTIMIZE MOVEMENT</a><div class="channel">ProofBlock</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=jgyDtI4ch6A" target="_blank">How to Hitfall CONSISTENTLY</a><div class="channel">BadmouthBlooper</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=NQb-Zr-v678" target="_blank">5 ESSENTIAL Movement Techniques</a><div class="channel">Pixel Bee</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=1yeWS1P3QTI" target="_blank">Movement Drills for Beginners</a><div class="channel">Noir</div></div>
+</div>
+</div>
+
+<div class="yt-cat">
+<h4>Offizielle Aether Studios Tutorials (101 Serie)</h4>
+<div class="yt-grid">
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=tzW_7yrtC9Q" target="_blank">Zetterburn 101</a><div class="channel">Aether Studios</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=_xz6-2iPg4M" target="_blank">Kragg 101</a><div class="channel">Aether Studios</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=Wir7d7orK2Q" target="_blank">Wrastor 101</a><div class="channel">Aether Studios</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=12I3-nzdbWA" target="_blank">Maypul 101</a><div class="channel">Aether Studios</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=cQh4SA8xyco" target="_blank">Ranno 101</a><div class="channel">Aether Studios</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=bctME0TKqYA" target="_blank">Clairen 101</a><div class="channel">Aether Studios</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=oMDKbJ6VcsA" target="_blank">Loxodont 101</a><div class="channel">Aether Studios</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=lqYfvZUPOes" target="_blank">Fleet 101</a><div class="channel">Aether Studios</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=k0SypHX4fpM" target="_blank">Orcane 101</a><div class="channel">Aether Studios</div></div>
+  <div class="yt-item"><a href="https://www.youtube.com/watch?v=bwhQD0OETA4" target="_blank">Etalus 101</a><div class="channel">Aether Studios</div></div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<section id="glossary">
+<h2>6. Glossar</h2>
+<p>Wichtige Begriffe aus Rivals of Aether 2 und Platform-Fightern.</p>
+<div class="glossary-list">
+
+<div class="glossary-letter"><h4>A</h4></div>
+<div class="glossary-item"><strong>Aerial</strong> - Angriff in der Luft (N-Air, F-Air, B-Air, U-Air, D-Air)</div>
+<div class="glossary-item"><strong>Airdodge</strong> - Luft-Ausweichen, kurze Invincibility</div>
+<div class="glossary-item"><strong>ASDI</strong> - Automatische Stick-Eingabe nach Hitpause</div>
+<div class="glossary-item"><strong>Armor</strong> - Knockback Armor, Weak Armor, Super Armor</div>
+
+<div class="glossary-letter"><h4>B</h4></div>
+<div class="glossary-item"><strong>B-Reverse</strong> - Special-Richtung waehrend Startup = Momentum-Umkehr</div>
+<div class="glossary-item"><strong>B-Turnaround</strong> - Special dann sofort andere Richtung</div>
+<div class="glossary-item"><strong>Babydash</strong> - Minimaler, sofort stoppbarer Dash</div>
+
+<div class="glossary-letter"><h4>C</h4></div>
+<div class="glossary-item"><strong>Crouch Cancel (CC)</strong> - Knockback-Reduktion im Crouch</div>
+<div class="glossary-item"><strong>Command Grab</strong> - Spezieller, nicht shieldbarer Grab</div>
+
+<div class="glossary-letter"><h4>D</h4></div>
+<div class="glossary-item"><strong>DACUS</strong> - Dash Attack Cancel Up Strong</div>
+<div class="glossary-item"><strong>Dash Dance</strong> - Hin-Her-Dashen</div>
+<div class="glossary-item"><strong>DI</strong> - Directional Influence: Flugrichtung beeinflussen</div>
+<div class="glossary-item"><strong>DJC</strong> - Double Jump Cancel</div>
+
+<div class="glossary-letter"><h4>E</h4></div>
+<div class="glossary-item"><strong>Edge Cancel</strong> - Kein Landing Lag an Plattformkante</div>
+<div class="glossary-item"><strong>Eruption</strong> - Loxodonts D-Special (Level 1-3)</div>
+
+<div class="glossary-letter"><h4>F</h4></div>
+<div class="glossary-item"><strong>Fastfall</strong> - Stick kurz runter = sofort Fall-Speed</div>
+<div class="glossary-item"><strong>Floorhugging</strong> - Crouch bei Treffer fuer KB-Reduktion</div>
+
+<div class="glossary-letter"><h4>G</h4></div>
+<div class="glossary-item"><strong>Galvanization</strong> - Galvans verstaerkter State nach Treffer</div>
+<div class="glossary-item"><strong>Glide Toss</strong> - Item werfen + gleiten</div>
+<div class="glossary-item"><strong>Gatling</strong> - Dash Attack > Up Strong (Zetterburn)</div>
+
+<div class="glossary-letter"><h4>H</h4></div>
+<div class="glossary-item"><strong>Haxdash</strong> - Ledge > Drop > Airdodge zurueck</div>
+<div class="glossary-item"><strong>Hitfall</strong> - Fastfall in Hitpause nach Aerial-Treffer</div>
+<div class="glossary-item"><strong>Hitpause</strong> - Kurzer Stop bei Treffern (Hitlag)</div>
+<div class="glossary-item"><strong>Hitstun</strong> - Zeit nach Treffer, nicht actionable</div>
+<div class="glossary-item"><strong>Hydroplane</strong> - Orcanes Run-Turnaround Speed-Boost</div>
+
+<div class="glossary-letter"><h4>I</h4></div>
+<div class="glossary-item"><strong>IASA</strong> - Interruptible As Soon As (erster actionable Frame)</div>
+<div class="glossary-item"><strong>ISF</strong> - Instant Slow Fall (Fleet, Frame 6)</div>
+
+<div class="glossary-letter"><h4>J</h4></div>
+<div class="glossary-item"><strong>Jab</strong> - Neutral-A Bodenangriff</div>
+<div class="glossary-item"><strong>Jab Reset</strong> - Liegenden Gegner mit Jab treffen</div>
+
+<div class="glossary-letter"><h4>K</h4></div>
+<div class="glossary-item"><strong>Knockback</strong> - Kraft die Gegner wegschleudert</div>
+
+<div class="glossary-letter"><h4>L</h4></div>
+<div class="glossary-item"><strong>Ledge</strong> - Buehnenkante mit Optionen (Stand, Roll, Jump, etc.)</div>
+<div class="glossary-item"><strong>Ledgedash</strong> - Ledge > Drop > DJ > Waveland</div>
+<div class="glossary-item"><strong>Ledgehop</strong> - Ledge > Drop > DJ > Aerial</div>
+<div class="glossary-item"><strong>Landing Lag</strong> - Verzoegerung nach Landung (4 Frames)</div>
+
+<div class="glossary-letter"><h4>M</h4></div>
+<div class="glossary-item"><strong>Molten Charge</strong> - Loxodonts Lava-Boost (max 3)</div>
+
+<div class="glossary-letter"><h4>N</h4></div>
+<div class="glossary-item"><strong>NIL</strong> - No Impact Land</div>
+
+<div class="glossary-letter"><h4>O</h4></div>
+<div class="glossary-item"><strong>OoS</strong> - Out of Shield</div>
+
+<div class="glossary-letter"><h4>P</h4></div>
+<div class="glossary-item"><strong>Parry</strong> - Perfekter Block, stunnt Gegner</div>
+<div class="glossary-item"><strong>Pillar</strong> - Kraggs U-Special Plattform</div>
+<div class="glossary-item"><strong>Puddle</strong> - Orcanes Wasserpfütze</div>
+
+<div class="glossary-letter"><h4>R</h4></div>
+<div class="glossary-item"><strong>RAR</strong> - Reverse Aerial Rush</div>
+<div class="glossary-item"><strong>Rekka</strong> - Mehrteilige Special-Serie (Slade F-Special)</div>
+<div class="glossary-item"><strong>Rock</strong> - Kraggs Stein/Projektil</div>
+
+<div class="glossary-letter"><h4>S</h4></div>
+<div class="glossary-item"><strong>SDI</strong> - Smash DI: Bewegung in Hitpause</div>
+<div class="glossary-item"><strong>Shine</strong> - Zetterburns N-Special (Frame 2, JC)</div>
+<div class="glossary-item"><strong>Short Hop</strong> - Kurzer Sprung</div>
+<div class="glossary-item"><strong>Slow Fall</strong> - Fleets Schwebe-Mechanik</div>
+<div class="glossary-item"><strong>Special Fall</strong> - Inactionable nach manchen Specials</div>
+<div class="glossary-item"><strong>Spike</strong> - Aerial der Gegner runter schickt</div>
+<div class="glossary-item"><strong>Strong</strong> - Aufladbarer Staerkeangriff</div>
+
+<div class="glossary-letter"><h4>T</h4></div>
+<div class="glossary-item"><strong>Tech</strong> - Vor Bodenkontakt Shield = keine Bodenlage</div>
+<div class="glossary-item"><strong>Tech Chase</strong> - Gegner nach Tech lesen/bestrafen</div>
+<div class="glossary-item"><strong>Tipper/Tipstun</strong> - Clairens Schwertspitzen-Stun</div>
+<div class="glossary-item"><strong>Tumble</strong> - Unkontrollierbarer Flug (KB > 26 cm/f)</div>
+
+<div class="glossary-letter"><h4>U</h4></div>
+<div class="glossary-item"><strong>Undershine</strong> - Gegner von unten mit Shine treffen</div>
+<div class="glossary-item"><strong>UFO</strong> - Galvans steuerbare Plattform</div>
+
+<div class="glossary-letter"><h4>W</h4></div>
+<div class="glossary-item"><strong>Wall Cling</strong> - Wall-Jumpsquat bis 60 Frames halten</div>
+<div class="glossary-item"><strong>Wall Jump</strong> - Einmal pro Airtime</div>
+<div class="glossary-item"><strong>Wavebounce</strong> - B-Reverse in B-Turnaround</div>
+<div class="glossary-item"><strong>Wavedash</strong> - Luft-Ausweichen diagonal in Boden = Slide</div>
+<div class="glossary-item"><strong>Waveland</strong> - Wavedash auf Plattform</div>
+<div class="glossary-item"><strong>Wiggle Out</strong> - Stick in Hitstun = verkuerzter Hitstun</div>
+<div class="glossary-item"><strong>Wind Chime</strong> - Fleets Pfeil-Verstaerkung (Explosion nach 3s)</div>
+
+<div class="glossary-letter"><h4>Z</h4></div>
+<div class="glossary-item"><strong>Z-Air</strong> - Item mit Grab in Luft fangen/werfen</div>
+
+</div>
+</section>
+
+<footer style="text-align:center;padding:40px 0;color:var(--text2);font-size:13px;border-top:1px solid var(--border);margin-top:40px;">
+  <p>Rivals of Aether 2 Guide &bull; Stand: Patch 1.6.1 (Mai 2026) &bull; Erstellt: Juni 2026</p>
+  <p>Quellen: <a href="https://dragdown.wiki/wiki/RoA2" style="color:var(--accent)">Dragdown.wiki</a> (CC BY-SA 4.0), YouTube, Aether Studios</p>
+</footer>
+
+</div></div>
+</body>
+</html>
