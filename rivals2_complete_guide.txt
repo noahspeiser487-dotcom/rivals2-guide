@@ -1,0 +1,1096 @@
+================================================================================
+  RIVALS OF AETHER 2 - KOMPLETT GUIDE
+  Stand: Mai 2026 (Patch 1.6.1)
+  Quellen: Dragdown.wiki, YouTube-Guides
+================================================================================
+
+INHALTSVERZEICHNIS
+==================
+1.  EINFUEHRUNG
+2.  SYSTEM-MECHANIKEN
+    2.1  Bodengebundene Bewegung
+    2.2  Aeriale Bewegung
+    2.3  Angriffe
+    2.4  Verteidigung
+    2.5  Knockdown & Tech
+    2.6  Ledge (Kante)
+    2.7  Gegner Treffen (Knockback, Hitstun, Armor)
+3.  UNIVERSAL-TECHNIKEN
+    3.1  Bewegungstechniken
+    3.2  Offensive Techniken
+    3.3  Defensive Techniken
+    3.4  Offstage-Techniken
+4.  CHARAKTER-GUIDES
+    4.1  Zetterburn
+    4.2  Forsburn
+    4.3  Loxodont
+    4.4  Clairen
+    4.5  Wrastor
+    4.6  Fleet
+    4.7  Absa
+    4.8  La Reina
+    4.9  Galvan
+    4.10 Olympia
+    4.11 Maypul
+    4.12 Kragg
+    4.13 Ranno
+    4.14 Orcane
+    4.15 Etalus
+    4.16 Slade
+5.  YOUTUBE-GUIDE-LISTE
+6.  GLOSSAR
+
+================================================================================
+1.  EINFUEHRUNG
+================================================================================
+
+Rivals of Aether 2 ist ein Platform-Fighter, entwickelt von Aether Studios.
+Es ist der Nachfolger von Rivals of Aether (2015). Das Spiel erschien am
+23. Oktober 2024 fuer PC (Steam).
+
+Das Spiel verwendet ein Prozent-System (Schaden von 0-999%). Ziel ist es,
+den Gegner aus dem Bildschirm (Blastzone) zu befördern. Es gibt keine
+Shields im traditionellen Sinne, sondern eine Pariermechanik.
+
+Aktuelle Version: 1.6.1 (April 2026)
+Aktuelle Charaktere: 16 (inkl. DLC)
+
+================================================================================
+2.  SYSTEM-MECHANIKEN
+================================================================================
+
+2.1  Bodengebundene Bewegung
+---------------------------
+
+Das Spiel verwendet die linke Seite der Tastatur / den linken Analogstick.
+Standard-Steuerung (Xbox/GCN/Keyboard):
+- Links/Rechts: Laufen
+- leichtes Antippen: Gehen (walk)
+- voller Ausschlag: Sprinten (run / dash)
+
+Jeder Charakter hat zwei Bewegungsmodi:
+- Walk: aus dem Walk kann man alles machen (Jab, Tilt, Strong, Special, etc.)
+- Dash/Run: initialer Dash (wenige Frames) gefolgt von Run-Status.
+  Aus dem Run kann man: Dash Attack, Dash Grab, Shield, Springen.
+  Aus dem Run kann man NICHT direkt tilten (Umweg: crouch > tilt)
+
+Wavedashing:
+- Luft-Ausweichen diagonal nach unten in den Boden
+- Dadurch entsteht eine horizontale Gleitbewegung
+- Nach dem Waveland (Landung) ist man sofort actionable
+- Jeder Charakter hat unterschiedliche Wavedash-Distanz
+
+Edge Cancel / Teeter Cancel:
+- Edge Cancel: Landung an der Plattformkante waehrend einer Aktion verkuerzt
+  die Landeverzögerung und erlaubt sofortige Aktionen
+- Teeter Cancel: ahnlich, aber am Rand der Plattform
+
+Bodenreibung und Beschleunigung variieren pro Charakter.
+Dash Dance: Hin- und Her-Dashen im initialen Dash-Fenster, um die
+Bewegung unvorhersehbar zu machen.
+
+2.2  Aeriale Bewegung (Luftbewegung)
+------------------------------------
+
+- Aerial Drift: In der Luft kann man horizontal steuern, begrenzt durch
+  die maximale Luftgeschwindigkeit und Luftbeschleunigung jedes Chars.
+- Fastfall: Geschwindigkeit wird sofort auf Fastfall-Speed gesetzt.
+  Input: Stick waehrend Fall kurz nach unten tippen (Hard Press Threshold
+  von 0.8). Kleiner Funke als visuelles Signal.
+- Double Jump: Jeder Charakter hat mindestens einen Doppelsprung.
+  Wird wiederhergestellt bei: Landung, Ledge-Grab, Gegriffenwerden.
+  Weisse Ringe an den Fuessen beim Ausfuehren.
+- Wall Jump: Einmal pro Airtime, 5 Frames Wall-Jumpsquat.
+- Wall Cling: Manche Chars koennen Wall-Jumpsquat bis zu 60 Frames halten.
+- Special Fall: Nach manchen Specials inactionable bis Landung oder
+  Ledge-Grab; Drift und Fastfall sind moeglich.
+- Landing Lag: Universelle 4 Frames Landeverzögerung (ausser bei Aerials
+  mit eigener Landing-Lag). Kann gecancelt werden durch Edge Cancel,
+  Teeter Cancel, No Impact Land (NIL).
+- No Impact Land (NIL): Landung mit minimaler vertikaler Geschwindigkeit,
+  sofortige Aktion ohne Verzögerung. Nicht waehrend Aerials ausserhalb
+  des Autocancel-Fensters (erste 4 Frames oder nach IASA).
+
+2.3  Angriffe
+-------------
+
+Jeder Charakter hat folgende Angriffsarten:
+
+- Jab (Neutral A): Schnellster Bodenangriff, oft 3 Hits.
+- Dash Attack: Aus dem Sprint.
+- Tilts (Side-Tilt, Up-Tilt, Down-Tilt): Leichtere Angriffe, gut fuer
+  Combos. Nicht aus Run direkt (crouch cancel nodig).
+- Strongs / Smashes (Side-Strong, Up-Strong, Down-Strong): Aufladbare
+  Staerkeangriffe. Koennen fuer mehr Knockback geladen werden.
+  Manche Chars (Wrastor) haben Strongs nur in der Luft.
+- Aerials (N-Air, F-Air, B-Air, U-Air, D-Air): Angriffe in der Luft.
+- Specials (N-Special, F-Special, U-Special, D-Special): Charakter-
+  spezifische Spezialangriffe.
+- Grab / Pummel / Throw: Gegner greifen, schütteln (pummel), werfen
+  (F-Throw, B-Throw, U-Throw, D-Throw).
+
+Hitfall: Wenn ein Aerial trifft, kann man waehrend der Hitpause
+einen Fastfall eingeben. Dadurch faellt man schneller und ist frueher
+wieder actionable. Kern-Tool fuer Kombos.
+
+Autocancel: Wenn ein Aerial in den ersten 4 Frames (Startup) oder nach
+dem IASA-Frame landet, gibt es keine move-spezifische Landing-Lag,
+sondern nur die universellen 4 Frames.
+
+2.4  Verteidigung (Defense)
+---------------------------
+
+- Shield: Blockt Angriffe. Shield wird durch getroffene Angriffe
+  beschaedigt und regeneriert sich allmählich.
+- Perfect Shield / Parry: Block im ersten Frame eines Angriffs
+  = keine Shield Damage, pariert den Angriff.
+  Parry stunnt den Gegner, gibt dir einen grossen Counter-Window.
+  Pariert auch Projektile (Reflect).
+  Parry refreshed den Shield auf voll.
+- Roll: Waehrend Shield + Links/Rechts. Leichte Invincibility.
+- Spot Dodge: Waehrend Shield + Unten. Ausweichen auf der Stelle.
+- Air Dodge: In der Luft + Shield/R-Triger. Kann jede Richtung.
+- Crouch Cancel (CC): Im Crouch getroffen werden reduziert Knockback.
+  Paart mit Floorhugging fuer minimierten Hitstun.
+- DI (Directional Influence): Stick in eine Richtung waehrend Hitpause,
+  beeinflusst die Flugrichtung. Alles oder nichts (nur Kardinalrichtungen
+  und Diagonalen, keine feinen Winkel).
+- SDI/ASDI: SubDirectional Influence waehrend Hitpause vs automatisch
+  nach Hitpause.
+- Shield Pushback: Der Shield wird bei Treffern zurueckgeschoben.
+- Shield DI: Stick-Richtung waehrend Shield-Treffer = Shield bewegt sich.
+
+================================================================================
+3.  UNIVERSAL-TECHNIKEN
+================================================================================
+
+3.1  Bewegungstechniken
+-----------------------
+
+WAVEDASHING
+Input: Luft-Ausweichen diagonal nach unten in den Boden
+Effekt: Horizontaler Slide, sofort actionable nach Landung
+Nutzung: Neutrale Positionierung, Ausweichen, pressure
+
+WAVELAND
+Input: Luft-Ausweichen diagonal nach unten auf Plattform
+Effekt: Wie Wavedash, aber auf Plattform landen
+
+DASH DANCE
+Input: Waerend initialem Dash die andere Richtung antippen
+Effekt: Hin-und-Her-Bewegung, schwer zu lesen
+Nutzung: Wiff Punish, Raumkontrolle
+
+FOXTROT
+Input: Dash > warten bis Dash endet > wieder Dash
+Effekt: Wiederholte Dashes mit kurzen Pausen
+
+MOONWALK
+Input: Waerend Dash den Stick langsam von vorne nach hinten rollen
+Effekt: Rueckwaertsgleiten, Mixup
+
+RAR (Reverse Aerial Rush)
+Input: Waerend Run den Stick schnell nach hinten + Springen + Aerial
+Effekt: Rueckwaertsgerichteter Aerial aus Vorwaertsbewegung
+
+CACTUAR DASH / KOOPA DASH
+Input: Dash > kurz entgegengesetzt > wieder in Originalrichtung
+Effekt: Extrem schnelles Wiederholen der initialen Dash-Bewegung
+
+EDGE CANCEL
+Input: Landung an Plattformkante waehrend einer Aktion
+Effekt: Aktion wird sofort gecancelt, kein Landing Lag
+
+BOBBY DROP / WAVEDROP / MOONDROP
+Input: Von Plattform fallen + direkt wavelanden
+Effekt: Plattform-basierte Bewegungstechniken
+
+HAXDASH
+Input: Ledge Drop > Jump > Immediate Airdodge to Ledge
+Effekt: Refresh Ledge Intangibility ohne aufzusteigen
+
+AERIAL CANCEL EMPTY LAND (ACEL)
+Input: Aerial starten, frueh landen (innerhalb Autocancel-Fenster)
+Effekt: Keine Landing Lag, sofort actionable
+
+3.2  Offensive Techniken
+-----------------------
+
+HITFALL
+Input: Aerial trifft > waerend Hitpause nach unten tippen
+Effekt: Sofortiger Fastfall, erlaubt Follow-ups
+
+GATLING COMBO (Dash Attack > Up Strong)
+Input: Dash Attack auf Hit > Up Strong
+Effekt: Einige Chars (Zetterburn) koennen Dash Attack in Up Strong canceln
+
+DACUS (Dash Attack Cancel Up Strong)
+Input: Dash Attack > waerend Startup: Hit + Up Strong
+Effekt: Gleitender Up Strong, extrem lange Reichweite
+
+TILTBOOST
+Input: Run > Crouch > Tilt (ausser Side-Tilt)
+Effekt: Tilt kommt aus Laufbewegung, mehr Reichweite
+
+JC UP STRONG (Jump Cancel Up Strong)
+Input: Jump > sofort Up Strong
+Effekt: Up Strong aus dem Stand schneller
+
+UP STRONG OOS (Out of Shield)
+Input: Waerend Shield: Up Strong
+Effekt: Up Strong waerend man shielded
+
+GLIDE TOSS
+Input: Waerend Item-Angriff: Shield + Stick-Richtung
+Effekt: Wirft Item in eine Richtung + gleitet
+Nutzung: Positionierung, Item-Setups
+
+AERIAL GLIDE TOSS (AGT)
+Input: In der Luft Item-Angriff > Luft-Ausweichen
+Effekt: Horizontale Bewegung + Wurf. Essentiell fuer Recovery mancher Chars
+
+B-TURNAROUND
+Input: Special druecken dann sofort die andere Richtung
+Effekt: Special geht in die andere Richtung, Momentum bleibt
+
+B-REVERSE
+Input: Waerend Special-Startup die andere Richtung halten
+Effekt: Momentum wird umgekehrt, Special in neue Richtung
+
+WAVEBOUNCE
+Input: B-Reverse innerhalb eines B-Turnarounds
+Effekt: Momentum-Stop, komplexes Movement-Mixup
+
+3.3  Defensive Techniken
+-----------------------
+
+AMSHA TECH
+Input: Kurz vor Bodenkontakt Shield tippen
+Effekt: Tech-en trotz starkem Knockback
+
+WIGGLE OUT
+Input: Stick waerend Hitstun hin-und-her bewegen
+Effekt: Verkuerzt Hitstun (1.5-fache Geschwindigkeit der Wiggle-Inputs)
+
+SHIELD DI
+Input: Stick-Richtung waerend man getroffen wird im Shield
+Effekt: Shield bewegt sich, veraendert Position
+
+SHIELD SLIDEOFF
+Input: An Kanten getroffen werden im Shield
+Effekt: Man rutscht von der Kante, sichert Recovery
+
+SDI / SSDI
+Input: Waerend Hitpause Stick in eine Richtung
+Effekt: Charakter bewegt sich in Hitpause (SDI: pro Frame, SSDI: einmalig)
+
+DOUBLE STICK DI
+Input: Beide Sticks in die gleiche Richtung waerend Hitstun
+Effekt: Maximales DI
+
+3.4  Offstage-Techniken
+----------------------
+
+LEDGEHOP
+Input: Ledge Drop > Double Jump > Aerial
+Effekt: Intangibler Aerial von der Kante, offensive Option
+
+LEDGEDASH
+Input: Ledge Drop > Double Jump > Waveland auf Buehne
+Effekt: Auf Buehne landen mit Intangibility, sofort actionable
+
+LAZY LEDGEDASH
+Input: Ledge Drop > Double Jump > Airdodge > Landung
+Effekt: Einfacherer Ledgedash, weniger praezise
+
+SCARJUMP
+Input: Ledge Drop > Doppelsprung (nach innen)
+Effekt: Extrem schnelles Zurueckkommen auf Buehne
+
+PC DROP
+Input: Von Buehne laufen > kurz vor Kante Shield
+Effekt: Man faellt von Buehne waerend Shield-Animations-Frames
+
+WAVEDASH BACK FASTFALL
+Input: Von Buehne wavidashen > Fastfall zum Ledge-Grab
+Effekt: Schnelles Runtergehen, Ledge-Grab
+
+
+
+================================================================================
+4.  CHARAKTER-GUIDES
+================================================================================
+
+4.1  ZETTERBURN
+----------------
+
+Archetyp: Mittelgewicht Fastfaller / Rushdown (Space Animal)
+Element: Feuer
+
+Ueberblick:
+Zetterburn ist ein Rushdown-Charakter, der Gegner verbrennt (Burn) und
+dann mit verstaerkten Strong-Attacks frueh killt. Sein Shine (N-Special)
+ist ein Frame-2 Move, der jump-cancellable ist - Kernstueck seines
+Druck-Spiels.
+
+Einzigartige Mechaniken:
+- BURN: Specials und B-Air entzuenden Gegner fuer 5 Ticks (1% pro Tick).
+  Verbrannte Gegner erleiden zusaetzlichen Knockback von Strongs.
+- FIRE PUDDLE: D-Special, Ledge Special, Getup Special erzeugen eine
+  Feuerpfütze. Darin stehen verursacht Burn.
+- FIRE AMP: Strongs und F-Throw an brennenden Gegnern verbrauchen die
+  Flamme fuer einen zweiten Treffer mit zusaetzlichem Damage/Knockback.
+
+Staerken:
+- Ueberwaeltigender Rushdown mit Shine > Jump-Cancel Optionen
+- Beste Shield Pressure im Spiel (Shine > Wavedash/Aerial/Grab Mixups)
+- Fruehe Kills gegen verbrannte Gegner (besonders U-Strong)
+- Gut abgerundete Mobility
+
+Schwächen:
+- Schwache Recovery - lineare Up-B, anfaellig fuer Edgeguards
+- Keine Disjoints ausser B-Air
+- Angewiesen auf Confirms fuer fruehe Kills
+
+Wichtige Moves:
+- N-Special (Shine): Frame 2, jump-cancellable. Verbindet in Aerial,
+  Wavedash, Grab, U-Strong.
+- Dash Attack: Cancelt in U-Strong auf Hit (Gatling).
+- U-Strong: Schneller Kill-Option, Anti-Air, Tech Chase.
+- D-Air: Grosser Spike, exzellenter Combo-Starter und Edgeguard.
+- F-Air: Bester Approach-Aerial, gute Range, sicher auf Shield.
+- B-Air: Brennt Gegner, wichtigster Kill-Confirm aus Combos.
+
+Kern-Kombos:
+- Niedrig%: D-Air > Shine > U-Tilt / Aerial Follow-ups
+- Mittel%: Shine (undershine) > Waveland > U-Strong
+- Hoch%: D-Throw > U-Strong (DI in) / F-Strong (DI out)
+- Gatling: Dash Attack > U-Strong
+
+Tech-Tipps:
+- Shine wird jump-cancelled sobald Jump gedrueckt wird
+- Undershine (getroffener Gegner ist ueber dir) gibt beste Combo-Winkel
+- Flip Cancel: Aerial D-Special > Shield = Recovery Mixup
+- Feuerbaelle (F-Special) nutzen um Gegner zu konditionieren
+
+4.2  FORSBURN
+---------------
+
+Archetyp: Mittelgewicht Semi-Fastfaller / Taeuscher Rushdown
+Element: Feuer (Rauch/Illusion)
+
+Ueberblick:
+Forsburn nutzt Rauchwolken zur Taeuschung und einen Klon (aufgeladenes
+N-Special) fuer Druck. Seine Dolch-Normals haben Disjoints und gute
+Combo-Tools.
+
+Staerken:
+- Geschmeidiger Dashdance mit grossen aktiven Disjoints
+- Rauch macht ihn unsichtbar + still bis zum naechsten Angriff
+- Klon erzeugt Pseudo-Projektil-Druck und Combo-Extensions
+
+Schwaechen:
+- Hoher Short Hop erschwert aggressives Spiel
+- Wenige Forward-facing Approach-Moves bei niedrigen%
+- Kreatives Neutral-Spiel notwendig
+
+Einzigartige Mechaniken:
+- SMOKE (Rauch): Normale erzeugen Rauchwolken. Darin ist Forsburn
+  unsichtbar und silent (keine Sound-FXs bei Movement).
+- CLONE (Klon): Aufgeladenes N-Special (halten) erzeugt Klon.
+  Klon imitiert Aktionen, bei erneutem N-Special detoniert er.
+
+4.3  LOXODONT
+---------------
+
+Archetyp: Schwergewicht Floatie / Disjoint-Zoner
+Element: Erde/Lava
+
+Ueberblick:
+Loxodont kontrolliert den Raum mit riesigen Axt-Hitboxen. Seine
+Molten Charges (von Lava-Pools) verstaerken seine Strongs und
+aktivieren Eruption (D-Special).
+
+Staerken:
+- Beherrscht die Buehne mit riesigen Disjoints und Meatball-Projektil
+- Dominantes Punish-Game mit grossen Aerials und starken Strongs
+- Ueberlebt sehr lange als Heavyweight
+
+Schwaechen:
+- Schlechte Frame Data (schnellster Move = Frame 7)
+- Grosser Hitbox + Floatie = leicht zu treffen
+- Lineare Recovery ohne Eruption
+
+Wichtige Moves:
+- F-Tilt: Zieht Gegner rein, kann in 2.Hit, U-Tilt oder D-Tilt canceln
+- D-Tilt: Stomp mit Shockwave-Launcher, erzeugt Lava Pool
+- N-Special (Meatball): Aufladbares, winkelbares Projektil
+- D-Special (Eruption): Level 1-3 Sprung + Explosion, Win-Condition
+- F-Special (Stampede): Command Grab, Tech Chase Starter
+
+Kern-Kombos:
+- D-Tilt (Shockwave) > Aerial Follow-ups
+- D-Throw (auf Lava Pool) > Pop-up > Combo
+- Eruption > Aerial Cancel > B-Air/Tusks
+
+Tech-Tipps:
+- Meatball kann von F-Special gegriffen werden fuer spezielle Winkel
+- D-Throw auf Lava Pool = Pop-up statt Bodenlage
+- Eruption Lv3 stellt Doppelsprung wieder her
+
+4.4  CLAIREN
+--------------
+
+Archetyp: Mittelgewicht Semi-Fastfaller / Schwertkaempfer
+Element: Elektrizitaet
+
+Ueberblick:
+Clairen hat vollstaendig disjointed Moves mit Tipper-Mechanik:
+Die Schwertspitze stunnt Gegner bei Treffern (Tipstun), gibt
+zusaetzliche Hitpause. Laengster Dashdance im Spiel, aber kein
+Projektil.
+
+Staerken:
+- Laengster Dashdance = exzellentes Wiff-Punishing
+- Tippers stunnen Gegner, geben Frame Advantage
+- Vollstaendig disjointed Moveset
+
+Schwaechen:
+- Sour Hits sind schwach und haben kein Combo-Potential
+- Kein Projektil oder Nahkampf-Tools
+- Benoetigt Praezision
+
+4.5  WRASTOR
+--------------
+
+Archetyp: Leichtgewicht Floaty / Aerial-Dominator
+Element: Luft
+
+Ueberblick:
+Wrastor kontrolliert den Himmel mit drei Doppelsprungen und
+flugbasierten Strongs. Slipstream (F-Special) erzeugt eine Windzone
+die seine Geschwindigkeit erhoeht.
+
+Einzigartige Mechaniken:
+- WIND CURRENT: Slipstream-Zone erhoeht Run-Speed und Aerial Mobility
+- WINGED FLIGHT: Drei Doppelsprunge (regained bei Ledge)
+- AERIAL ACE: Strongs nur in der Luft nutzbar
+- JUMP CANCEL TILTS: Tilts koennen auf Hit 12 Frames frueher gecancelt
+  werden (Jump Cancel)
+
+Staerken:
+- Extreme aeriale Flexibilitaet mit 3 Sprungen
+- Explosives Punish-Game mit U-Air DI Mix und Clap-Finisher
+- Schwer zu comboen (floaty)
+
+Schwaechen:
+- Leichtester Charakter - stirbt frueh
+- Technisch, unforgiving
+- Wenige Kill-Moves ausserhalb von Confirms
+
+Wichtige Moves:
+- F-Tilt: Bricht Floorhug frueh, jump-cancellable auf Hit
+- F-Strong/U-Strong (Claps): Airborne Kill Confirms
+- D-Strong: Dive-Spike, Distanz vom Charge abhaengig
+- U-Special (Wing Slash): Aufwaertsschnitt mit Sweetspot, killt frueh
+- D-Special: Command Hitgrab (greift nicht Shields), Combo-Starter
+
+Kern-Kombos:
+- D-Tilt > F-Strong / Aerial
+- U-Air Loops > Clap Finisher (DI in = U-Clap, DI out = F-Clap)
+- D-Special > U-Special (mittel-hohe% Kill Confirm)
+
+Tech-Tipps:
+- Hover Clap = Clap genau 1 Frame laden um horizontalen Momentum zu halten
+- Slipstream ist essentiell fuer D-Tilt Combos
+
+4.6  FLEET
+------------
+
+Archetyp: Leichtgewicht Floaty / Bogen-Midrange
+Element: Luft/Wind
+
+Ueberblick:
+Fleet ist eine Midrange-Kaempferin mit disjointed Bogen-Attacken und
+Pfeil-Projektilen. Ihr Slow Fall (Schweben) gibt unuebertroffene
+aeriale Kontrolle.
+
+Einzigartige Mechaniken:
+- SLOW FALL: Runter + Springen zum Schweben. ISF (Instant Slow Fall)
+  ist Frame 6.
+- WIND CHIMES: N-Special verstaerkt naechsten Pfeil-Angriff. Nach 3s
+  explodiert das Ziel (resetet Momentum). Kann gestapelt werden.
+
+Staerken:
+- Einzigartiges Schweben fuer aeriale Kontrolle
+- Projektile fuer alle Situationen (Neutral, TechChase, Edgeguard)
+- Offstage-Royalty mit Slow Fall, N-Air, B-Air, D-Air
+
+Schwaechen:
+- Ressourcen-Management mit N-Special (3 Charges)
+- Leichtgewicht - stirbt frueh
+- Niedrige Bodenbewegungsgeschwindigkeit
+
+Wichtige Moves:
+- N-Air: Schneller Spinning-Angriff, niedriger Landing Lag
+- F-Special (Jet Stream): Windpfeil mit Tornado, Raumkontrolle
+- D-Air: Pfeil-Spike, Wind Chime-verstaerkbar
+- B-Air: Power-Finisher, Reverse-Hit fuer DI Mixups
+- D-Special (Dodge Shot): Evasiver Backflip + Pfeil
+
+Kern-Kombos:
+- ISF Hitfall N-Air > N-Air / U-Tilt / Grab
+- D-Tilt > U-Air (Kill Confirm)
+- U-Throw > Aerial Follow-ups
+
+4.7  ABSA
+-----------
+
+Archetyp: Leichtgewicht Floaty / Setplay-Zoner
+Element: Elektrizitaet/Blitz
+
+Ueberblick:
+Absa nutzt ihren einzigartigen Double Jump (dippt runter vor Aufstieg)
+und lange Wavedashes fuer schwebende Bewegungen. Ihre Wolke (Projektil)
+erzeugt Setplay-Moeglichkeiten.
+
+Einzigartige Mechaniken:
+- UNIQUE DOUBLE JUMP: Dippt runter vor Aufstieg. Erlaubt DJC (Double
+  Jump Cancel) und Gravity Jump.
+- CLOUD (Wolke): Platzierbar, von Sweetspot-Kicks detonierbar.
+
+Staerken:
+- Einzigartige Bewegungen mit laengstem Wavedash
+- Wolken-Setplay limitiert defensive Optionen
+
+Schwaechen:
+- Schreckliche vertikale Ausdauer
+- Kurzer Dashdance
+- Probleme gegen Disjoints
+
+Wichtige Moves:
+- F-Air/B-Air/D-Air: Winzige aber extreme starke Sweetspots
+- U-Air: Extrem stark, killt frueh oben
+- F-Tilt: Schneller, sicherer Disjoint
+- U-Special: Doppel-Zip-Teleport
+- B-Throw: Kill-Throw
+
+4.8  LA REINA
+--------------
+
+Archetyp: Schwergewicht Fastfaller / Grappler
+Element: Dunkelheit/Macht
+
+Ueberblick:
+La Reina ist der residente Grappler mit Command Grabs, Hitgrabs und
+dem Chair (Stuhl) als Setplay-Tool. Sie zerstoert Shields und
+Floorhugging.
+
+Staerken:
+- Mehrere Command Grabs (F-Strong, D-Air, F-Special)
+- Chair-Setplay gibt zusaetzliche Pressure-Layer
+- Zerstoert Shields und CC
+
+Schwaechen:
+- Typische Grappler-Schwaechen: kommt schwer rein gegen Zoning
+- Benoetigt Naehe zum Gegner
+
+4.9  GALVAN
+-------------
+
+Archetyp: Schwergewicht Semi-Fastfaller / Setplay-Brawler
+Element: Metall/Magnet
+
+Ueberblick:
+Galvan nutzt stage hazards (Drills), UFO-Plattform und den Magnet-
+Projektil. Galvanization (glanzend nach Treffer) gibt verbesserte
+Tools.
+
+Einzigartige Mechaniken:
+- GALVANIZATION: Normale treffen macht Galvan glanzend. In dem State:
+  Drill-Platzierung, UFO auf U-Special, verbessertes F-Special.
+- DRILLS: Hitboxen aktiv wenn Gegner im Hitstun reintrifft. Max 3.
+
+Staerken:
+- Starkes Projektil (Magnet) mit Winkel- und Drill-Bouncing
+- Einzigartiges Setplay (UFO + Drills)
+- Starke Meatys mit guten Active Frames
+
+Schwaechen:
+- Extrem polarisierende Recovery
+- Leicht zu comboen
+- Schwacher Dashdance
+
+Wichtige Moves:
+- N-Special (Magnet): Winkelbares Projektil
+- F-Special (Drill Rush): Winkelbar, jump-cancellable
+- U-Special: Erzeugt UFO wenn galvanized
+- D-Special: Boden = Grabt; Luft = Spike
+- D-Air: Schneller Spike
+
+4.10 OLYMPIA
+--------------
+
+Archetyp: Leichtgewicht Fastfaller / Rushdown
+Element: Kristall/Edelstein
+
+Ueberblick:
+Olympia hat die schnellste Frame Data im Spiel. Ihre hohe Fall-Speed
+und kurzer Short Hop erlauben extrem schnelle aeriale Angriffe.
+
+Staerken:
+- Schnellste Frame Data - unglaublicher Nahkampf-Druck
+- Kurzer Short Hop + hohe Fallgeschwindigkeit
+- Gem-Projektil richtet Combos ein
+
+Schwaechen:
+- Keine Disjoints
+- Leicht + Fastfaller = stirbt frueh
+
+4.11 MAYPUL
+-------------
+
+Archetyp: Leichtgewicht Fastfaller / Speedster
+Element: Pflanze/Natur
+
+Ueberblick:
+Maypul ist der schnellste Charakter am Boden und in der Luft.
+Ihr Watcher's Mark ermoeglicht Wrap-Around-Kombos und Tether-Setups.
+
+Staerken:
+- Schnellste Movement im Spiel
+- Watcher's Mark fuer einzigartige Wrap-Kombos
+- Pflanzen-Setplay fuer Extensions
+
+Schwaechen:
+- Probleme bei niedrigen%
+- Dash Attack ist high risk/reward
+
+4.12 KRAGG
+------------
+
+Archetyp: Schwergewicht Fastfaller / Juggernaut
+Element: Erde
+
+Ueberblick:
+Kragg kontrolliert die Erde. Sein Rock (Stein) ist das beste Projektil
+im Spiel. Sein Pillar (U-Special) gibt ihm ueberall eine Plattform.
+
+Einzigartige Mechaniken:
+- ROCK: Vom Boden gezogen, in 4 Richtungen werfbar. Bricht in Shards.
+- EARTH PILLAR: Erzeugt solide Saeule, gibt DJ und Airdodge zurueck.
+
+Staerken:
+- Grosse, schwere Moves mit einfach verstaendlichem Kit
+- Rock Throw: schnell, gross, kraftvoll
+- Rock Shards decken vollen Bildschirm ab
+- Pillar erlaubt extrem tiefe Recoveries
+
+Schwaechen:
+- Leicht zu comboen (heavy + fastfaller)
+- Schwaches Midrange-Spiel ohne Rock
+
+Wichtige Moves:
+- N-Special: Rock Pull (Boden), Cargo Grab (Luft)
+- D-Special (Seismic Stomp): Boden = Spikes; Luft = diagonaler Spike
+- U-Special (Rock Pillar): Beschwoert Saeule
+- U-Tilt: Bester Combo-Starter, riesige Hitbox
+- F-Air: Langstrecken-Dropkick Kill-Move
+
+Kern-Kombos:
+- D-Throw > U-Strong (Kill Confirm)
+- N-Air Loops > F-Air
+- D-Throw Chaingrab (viele Chars, niedrig-mittel%)
+- Rock Throw > F-Air
+
+Tech-Tipps:
+- Dash Attack cancelbar auf Hit in Tilt/Jab
+- F-Special Cancel (Shield Startup) = horizontaler Sprung zur Wand
+- Auf Rock stehen + Jab = sofortige Shard Pressure
+
+4.13 RANNO
+------------
+
+Archetyp: Mittelgewicht Midfaller / Rushdown
+Element: Gift
+
+Ueberblick:
+Ranno verkoerpert "Tod durch tausend Nadelstiche" - schnelle Normals
+und hohe Bodengeschwindigkeit mit niedrigem Einzel-Knockback.
+
+Staerken:
+- Schnelle Bodenbewegung
+- Gift amplifiziert Schaden ueber Zeit
+- Exzellente Shield Pressure mit F-Air
+
+Schwaechen:
+- Niedrige Air Speed
+- Angewiesen auf Platform-Movement
+- Probleme fruehe Knockdowns zu bekommen
+
+4.14 ORCANE
+-------------
+
+Archetyp: Mittelgewicht Midfaller / Stage Control Trickster
+Element: Wasser
+
+Ueberblick:
+Orcane kontrolliert die Buehne mit seiner Puddle (Pfuetze), die
+Teleportation (U-Special) und verstaerkte Strongs ermoeglicht.
+
+Einzigartige Mechaniken:
+- PUDDLE: Erzeugt von N-Special, D-Special, U-Special am Boden.
+  Teleport, verstaerkte Strongs/F-Throw.
+- HYDROPLANE: Run-Turnaround Speed-Boost fuer Strongs.
+- BUBBLES: Fangen Gegner. Nicht wall/ground techbar.
+
+Staerken:
+- Fluessige Combo-Routen
+- Einzigartige Zoning-Tools
+- Starkes Setplay mit Puddle
+
+Schwaechen:
+- Wenige Landing-Optionen
+- Unorthodoxe Recovery
+- Probleme bei niedrigen%
+
+Wichtige Moves:
+- N-Air: Irre Frame Data, Nairbounce moeglich
+- D-Tilt: Disjointed Sweep, exzellenter Launcher
+- D-Strong: Frame 7, schnellster Strong
+- U-Special: Teleport zur Puddle
+
+Kern-Kombos:
+- D-Tilt > N-Air / B-Air / U-Air
+- U-Throw > Aerial (Bubbles fangen)
+- D-Throw > Tech Chase > D-Strong
+
+4.15 ETALUS
+-------------
+
+Archetyp: Schwergewicht Fastfaller / Eis-Zone-Control
+Element: Eis
+
+Ueberblick:
+Etalus zentriert um sein Eis - reduzierte Traktion auf Eis gibt
+groessere Wavedash-Reichweite. Eis unlockt seinen Dash Attack.
+
+Staerken:
+- Eis gibt exzellente Wavedash-Mobilitaet
+- Schneller, jump-cancellabler Dash Attack
+- Starke horizontale Carry-Kombos
+
+Schwaechen:
+- Wenig vertikale Finisher (nur U-Strong)
+- Heavy + Fastfaller = Combo Food
+
+4.16 SLADE
+------------
+
+Archetyp: Mittelgewicht Midfaller / Economy-Item-Play
+Element: Wasser
+
+Ueberblick:
+Slade nutzt disjointed Scimitar-Attacken und ein Economy-System:
+Treffer lassen Coins fallen, die Item-Kaeufe finanzieren.
+
+Einzigartige Mechaniken:
+- PLUNDERING: Angriffe droppen Coins. Items kaufen an Truhe.
+- CHEST OF DOOM (D-Special): Truhe fuer Items/Upgrades.
+
+Items (N-Special):
+- Shuriken (20 Coins): AGT-Recovery
+- Drop (100 Coins): Flinch + Heilung
+- Boomerang (200 Coins): Kehrt zurueck
+- Bomb (300 Coins): Explosion, Finisher
+
+Staerken:
+- Grosse, sweeping Disjoints
+- Konsistenter Zugang zu Item-Mechaniken
+- Economy-Minigame
+
+Schwaechen:
+- Langsamere Bodenbewegung
+- Item-lastiges Spiel erfordert Glide Toss/Z-Drop Tech
+
+Wichtige Moves:
+- U-Tilt: Platform-Shark, Anti-Air
+- D-Tilt: Zwei Hits, countert Floorhug
+- U-Strong: Riesige Hitbox ueber Plattformen
+- F-Special (Whirlpool Flurry): Rekka, 9 Branches, 3B = Parry
+- B-Air: Zwei pro Short Hop
+
+Tech-Tipps:
+- AGT mit Shuriken ist essentiell fuer Recovery
+- F-Special 3B ist eine schnelle Parry
+- Items in Truhe speichern = kein Despawn
+
+================================================================================
+5.  YOUTUBE-GUIDE-LISTE
+================================================================================
+
+5.1  Allgemeine Anfaenger-Guides
+---------------------------------
+- Art of Rivals - Beginner Basics: https://www.youtube.com/watch?v=FE2CAQoDED0
+- Art of Rivals - Neutral: https://www.youtube.com/watch?v=EPVQ0QCwO3o
+- Art of Rivals - Advanced Movement: https://www.youtube.com/watch?v=2iyy9g-X20s
+- Beginner's Guide: https://www.youtube.com/watch?v=vIOBWkHXOAw
+- Characters Explained: https://www.youtube.com/watch?v=q7a1MkWUV_k
+- How To Beat GOOD Players: https://www.youtube.com/watch?v=llV8aK9fYA0
+- ALL ADVANCED TECHNIQUES: https://www.youtube.com/watch?v=-mbRxbLEPW8
+
+5.2  Charakter-Guides
+----------------------
+Zetterburn:
+- Mew2king Beginner Guide: https://www.youtube.com/watch?v=WMzi_wNBUKU
+- Last Stock Master Guide: https://www.youtube.com/watch?v=FWue3VtjzpQ
+- Aether Studios 101: https://www.youtube.com/watch?v=tzW_7yrtC9Q
+
+Kragg:
+- Mew2king Guide: https://www.youtube.com/watch?v=rbuTl2j7nk0
+- ProofBlock ULTIMATE: https://www.youtube.com/watch?v=3_x7WqbWqmE
+- Aether Studios 101: https://www.youtube.com/watch?v=_xz6-2iPg4M
+
+Wrastor:
+- MrRsmash Guide: https://www.youtube.com/watch?v=SnYqGKJz774
+- Aether Studios 101: https://www.youtube.com/watch?v=Wir7d7orK2Q
+- michaelthegoat: https://www.youtube.com/watch?v=hfeCkYZwepA
+
+Maypul:
+- elpe Guide: https://www.youtube.com/watch?v=6ARljs0lGTQ
+- Aether Studios 101: https://www.youtube.com/watch?v=12I3-nzdbWA
+
+Ranno:
+- Theovates ULTIMATE: https://www.youtube.com/watch?v=J1IsQbCcUBs
+- ProofBlock ULTIMATE: https://www.youtube.com/watch?v=bvOhsJUR88E
+- Needleboosting Guide: https://www.youtube.com/watch?v=zo5VNgM5_UU
+
+Clairen:
+- michaelthegoat: https://www.youtube.com/watch?v=47GEkgYLms0
+- ProofBlock ULTIMATE: https://www.youtube.com/watch?v=KDh23wiK4Mg
+- Aether Studios 101: https://www.youtube.com/watch?v=bctME0TKqYA
+
+Loxodont:
+- Wisely Guide: https://www.youtube.com/watch?v=5cCHtUP0ck8
+- ProofBlock ULTIMATE: https://www.youtube.com/watch?v=i8Y-6_IdfVE
+- Aether Studios 101: https://www.youtube.com/watch?v=oMDKbJ6VcsA
+
+Fleet:
+- Wisely Guide: https://www.youtube.com/watch?v=SszJSpgk03c
+- Aether Studios 101: https://www.youtube.com/watch?v=lqYfvZUPOes
+- Slingshot Guide: https://www.youtube.com/watch?v=WxKnq9lBbfc
+
+Forsburn:
+- Aether Studios 101: https://www.youtube.com/watch?v=Z5scgEuPR_g
+- elpe Guide: https://www.youtube.com/watch?v=__-LSIyfwWI
+- Wisely Guide: https://www.youtube.com/watch?v=leZWrryYqYY
+
+Orcane:
+- Last Stock Master: https://www.youtube.com/watch?v=fvHkLpmvQiA
+- Aether Studios 101: https://www.youtube.com/watch?v=k0SypHX4fpM
+- Orcaboost Guide: https://www.youtube.com/watch?v=NcY-5GRPT3k
+
+Etalus:
+- Aether Studios 101: https://www.youtube.com/watch?v=bwhQD0OETA4
+- ProofBlock ULTIMATE: https://www.youtube.com/watch?v=GR8l_Fhr0xw
+- Last Stock Guide: https://www.youtube.com/watch?v=_r178pC1nZA
+
+DLC:
+- Olympia 101: https://www.youtube.com/watch?v=BM5C3GlNMvg
+- Absa 101: https://www.youtube.com/watch?v=ybfFMVc6i88
+- Galvan 101: https://www.youtube.com/watch?v=wtX2ymbbRu8
+- La Reina 101: https://www.youtube.com/watch?v=5_0t06hFKwM
+
+5.3  Combos & Combo-Videos
+---------------------------
+- Craziest Combos: https://www.youtube.com/watch?v=chs7AUwrqgM
+- Making Combos HURT: https://www.youtube.com/watch?v=bntzD9I29ec
+- Orcane Combo Showoff: https://www.youtube.com/watch?v=Hjtu-ru6K9k
+- Wrastor Combo: https://www.youtube.com/watch?v=W9XXIiICk3E
+- Etalus Combo: https://www.youtube.com/watch?v=kPOp8g04Ot4
+
+5.4  Movement-Guides
+---------------------
+- Complete Movement Guide: https://www.youtube.com/watch?v=M7nw3xZp77w
+- Control Stick Guide: https://www.youtube.com/watch?v=aSTp_GcdEAk
+- Moving with Purpose: https://www.youtube.com/watch?v=G8ONkSyF1mA
+- How to Hitfall: https://www.youtube.com/watch?v=jgyDtI4ch6A
+- 5 ESSENTIAL Movement: https://www.youtube.com/watch?v=NQb-Zr-v678
+- 10 Movement Techniques: https://www.youtube.com/watch?v=BSZojc-pIEU
+- Movement Drills: https://www.youtube.com/watch?v=1yeWS1P3QTI
+
+Notable Channels: Aether Studios, ProofBlock, Art of Rivals, Wisely,
+Mew2king, Doove, BadmouthBlooper
+
+================================================================================
+6.  GLOSSAR
+================================================================================
+
+Wichtige Begriffe aus Rivals of Aether 2 und Platform-Fightern allgemein.
+
+A
+-
+- Aerial: Ein Angriff in der Luft (N-Air, F-Air, B-Air, U-Air, D-Air).
+- Airdodge: Luft-Ausweichen. Gibt kurze Invincibility.
+- ASDI (Automatic Smash DI): Automatische Stick-Eingabe nach Hitpause.
+- Armor: Verschiedene Typen: Knockback Armor, Weak Armor, Super Armor.
+
+B
+-
+- B-Reverse: Special in die andere Richtung waehrend Startup = Momentum
+  wird umgekehrt.
+- B-Turnaround: Special dann sofort andere Richtung.
+- Babydash: Minimaler Dash, fast instant stoppable.
+- Buffer: System das Eingaben fuer bis zu 6 Frames zwischenspeichert.
+- Burn (Zetterburn): Debuff durch Feuer, verstaerkt Strongs.
+
+C
+-
+- Crouch Cancel (CC): Knockback-Reduktion wenn im Crouch getroffen.
+- Command Grab: Spezieller Grab der nicht durch Shield blockbar ist.
+- Clap (Wrastor): Luft-Strongs (F-Clap, U-Clap).
+- Cloud (Absa): Platzierbares Projektil, detonierbar durch Kicks.
+
+D
+-
+- DACUS: Dash Attack Cancel Up Strong. Gleitender Strong.
+- Dash Dance: Hin-Her-Dashen im initialen Dash.
+- Disjoint: Hitbox die nicht ueberlappt mit der Hurtbox des Angreifers.
+- DI (Directional Influence): Stick-Richtung in Hitpause beeinflusst Flug.
+- DJC (Double Jump Cancel): Doppelsprung sofort durch Aerial canceln.
+- Drill (Galvan): Platzierbare Hitbox, aktiviert in Hitstun.
+
+E
+-
+- Edge Cancel: Landung an Plattformkante = sofort actionable.
+- Eruption (Loxodont): D-Special, Level 1-3 Sprung + Explosion.
+- ECB (Environmental Collision Box): Unsichtbare Kollisionsbox.
+
+F
+-
+- Fastfall: Stick kurz nach unten = sofort hohe Fallgeschwindigkeit.
+- Floorhugging: Im Crouch getroffen werden fuer Knockback-Reduktion.
+- Foxtrot: Dash > kurze Pause > erneuter Dash.
+- Frame: Ein Bild (1/60 Sekunde). Die Zeit-Einheit in Fighting Games.
+
+G
+-
+- Galvanization: Galvan glänzt nach Treffer = verbesserte Moves.
+- Gatling: Dash Attack > Up Strong auf Hit (Zetterburn).
+- Glide Toss: Item + Shield + Richtung = Item werfen + gleiten.
+- Grab: Gegner greifen. Command Grab = nicht shieldbar.
+- Gravity Jump (Absa): Abwaerts-Jump mit Doppelsprung-Erhalt.
+
+H
+-
+- Haxdash: Ledge > Drop > Airdodge zurueck zur Ledge.
+- Hitfall: Waehrend Hitpause eines Aerial-Treffers Fastfall eingeben.
+- Hitpause: Kurzer Stop bei Treffern (Hitlag).
+- Hitstun: Zeit in der man nach Treffer nicht actionable ist.
+- Hydroplane (Orcane): Run-Turnaround Speed-Boost fuer Strongs.
+- Hurtbox: Bereich in dem der Charakter getroffen werden kann.
+
+I
+-
+- IASA (Interruptible As Soon As): Der Frame ab dem eine Aktion
+  gecancelt werden kann.
+- Intangibility: Unverwundbarkeit (nicht gleich Invincibility).
+- ISF (Instant Slow Fall, Fleet): Frame-6 Slow Fall Eingabe.
+
+J
+-
+- Jab: Neutral-A Bodenangriff (oft 1-3 Hits).
+- Jab Reset: Gegner im Liegen mit Jab treffen = muss techen.
+- Jump Squat: Kurze Animation vor dem Sprung (Startup).
+
+K
+-
+- Knockback: Die Kraft mit der ein Gegner weggeschleudert wird.
+
+L
+-
+- Ledge: Buehnenkante. Bietet Optionen (Stand, Roll, Jump, Drop, etc.).
+- Ledgedash: Ledge > Drop > DJ > Waveland auf Buehne.
+- Ledgehop: Ledge > Drop > DJ > Aerial (intangibel).
+- Ledge Intangibility: Max 3x pro Leben, dann keine mehr bis Landung.
+- Landing Lag: Verzoegerung nach Landung (universal 4 Frames).
+
+M
+-
+- Meatball (Loxodont): Aufladbares, winkelbares Projektil.
+- Molten Charge (Loxodont): Boost von Lava Pool fuer Strongs/Eruption.
+- Moonwalk: Stick langsam von vorne nach hinten rollen.
+
+N
+-
+- Nairbounce (Orcane): N-Air zweiten Treffer durch Stick-Richtung.
+- NIL (No Impact Land): Landung ohne Verzoegerung durch minimale
+  vertikale Geschwindigkeit.
+
+O
+-
+- OoS (Out of Shield): Aktion direkt aus dem Shield.
+- Orcahop: Kleiner U-Special-Sprung ohne Puddle (Orcane).
+
+P
+-
+- Parry: Perfect Shield. Pariert Angriff, stunnt Gegner.
+- Pillar (Kragg): U-Special erzeugt Plattform-Saeule.
+- Puddle (Orcane): Wasserpfütze. Ermoeglicht Teleport + Bubbles.
+
+R
+-
+- RAR (Reverse Aerial Rush): Aus Run > Rueckwaerts > Jump > Aerial.
+- Rekka: Mehrteilige Special-Serie (Slade's F-Special).
+- Rock (Kragg): Stein/Projektil + Stage-Element + Shards.
+- Roll: Shield + Links/Rechts = Ausweichrolle.
+
+S
+-
+- SDI (Smash DI): Stick-Richtung in Hitpause = Bewegung in Hitpause.
+- Shield: Block-Mechanik. Beschaedigt sich, regeneriert ausserhalb.
+- Shine (Zetterburn): N-Special, Frame 2, jump-cancellable.
+- Short Hop: Kurzer Sprung (Tap Jump).
+- Slow Fall (Fleet): Schwebe-Mechanik (Down + Jump).
+- Special Fall: Nach manchen Specials inactionable (Pratfall).
+- Spike: Aerial/Rebe der Gegner nach unten schickt.
+- Spot Dodge: Shield + Unten = Ausweichen auf der Stelle.
+- Strong: Aufladbarer Staerkeangriff (Smash-Aequivalent).
+
+T
+-
+- Tech: Vor Bodenkontakt Shield druecken = keine Bodenlage.
+- Tech Chase: Gegner nach Tech lesen und bestrafen.
+- Teeter Cancel: Wie Edge Cancel, aber am Buehnenrand.
+- Tether (Maypul/Slade): Spezieller Grab/Recovery-Tool.
+- Tipper/Tipstun (Clairen): Schwertspitze stunnt Gegner zusaetzlich.
+- Tumble: Unkontrollierbarer Flug-Zustand (wenn KB > 26 cm/f).
+
+U
+-
+- Undershine (Zetterburn): Gegner von unten mit Shine treffen.
+- UFO (Galvan): Steuerbare Plattform von U-Special (galvanized).
+
+W
+-
+- Wall Cling: Wall-Jumpsquat halten bis 60 Frames.
+- Wall Jump: Einmal pro Airtime, 5 Frames Squat.
+- Wavebounce: B-Reverse innerhalb B-Turnaround.
+- Wavedash: Luft-Ausweichen diagonal in Boden = Slide.
+- Waveland: Wie Wavedash aber auf Plattform.
+- Watcher's Mark (Maypul): Markierung fuer Wrap-Kombos.
+- Wiggle Out: Stick waerend Hitstun bewegen = verkuerzter Hitstun.
+- Wind Chime (Fleet): Pfeil-Verstaerkung, explodiert nach 3s.
+- Wiff Punish: Gegner bestrafen der daneben getroffen hat.
+
+Z
+-
+- Z-Air: Item/Projektil mit Z-Taste (Grab) in der Luft fangen/werfen.
+
+================================================================================
+ENDE DES GUIDES
+Erstellt: Juni 2026
+Quellen: Dragdown.wiki (CC BY-SA 4.0), YouTube (Art of Rivals,
+         BadmouthBlooper, Aether Studios, ProofBlock u.a.)
+================================================================================
+
